@@ -13,17 +13,10 @@
     
 
 <script>
-    /*
-    *   GAME RULES: 'https://www.lucidchart.com/invitations/accept/335c9134-4b18-43eb-b493-d16a87b0e722'
-    *   This program will make a gameboard for mancala with sausages in place of marbels. (spelling error)
-    *   A object for each "home" and for each "table" will have a number of sausages assigned too it that will be displayed as number until we start prettying up the code. 
-    *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
-    */
-
-var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
-var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
-var tableOne = {sausages: 0, color:"Green"};    // This is table one for the Italian. 
-var tableTwo = {sausages: 0, color:"Green"};
+var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen 1 or Player 1's home
+var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen 2 or Players 2's home
+var tableOne = {sausages: 0, color:"Green"};    // Table's one through six are on Player 2's side
+var tableTwo = {sausages: 0, color:"Green"};    
 var tableThree = {sausages: 0, color:"Green"};
 var tableFour = {sausages: 0, color:"Green"};
 var tableFive = {sausages: 0, color:"Green"};
