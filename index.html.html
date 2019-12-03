@@ -41,6 +41,37 @@ for(i of arr){
 console.log(board);
 
 
+// TO DOOO LIST: Make on click function that makes a "selectedTable"
+
+
+
+/*
+*   This is the function to DROP sausages after selecting a table.
+*   Precondition: currentHand is has sausages and a table has been emptyied of sausages but stays selected. 
+*   Postcondition: currentHand is empty and tables (going counter clockwise) has had a sausage dropped in them however many times currentHand lands on it. 
+*/
+function sausageDropHand()    {
+    while (selectedTable.sausages.length != 0)  {
+        selectedTable.sausages.length = selectedTable.sausages.length - 1;
+        currentHand.sausages + 1;
+    }
+    return
+}
+
+
+
+/*
+*   This is the function to PICK UP sausages after selecting a table.
+*   Precondition: currentHand is empty and a table has been selected. 
+*   Postcondition: currentHand has sausages and the selected table is now empty. 
+*/
+function sausagePickUpHand()    {
+    while (currentHand.sausages.length != 0)    {
+        currentHand.sausages.length - 1;
+        selectedTable.sausages.length = selectedTable.sausages.length + 1;
+    }
+    return
+}
 
 
 /*
