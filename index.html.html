@@ -26,7 +26,7 @@ var tableThree = {sausages: 0, color:"Green"};
 var tableFour = {sausages: 0, color:"Green"};
 var tableFive = {sausages: 0, color:"Green"};
 var tableSix = {sausages: 0, color:"Green"};
-var tableSeven = {sausages: 0, color:"Blue"};   // Table's seven through twelve are on Player 1's side
+var tableSeven = {sausages: 0, color:"Blue"};   // Table's seven through twelve are on America side
 var tableEight = {sausages: 0, color:"Blue"};
 var tableNine = {sausages: 0, color:"Blue"};
 var tableTen = {sausages: 0, color:"Blue"};
@@ -34,34 +34,31 @@ var tableEleven = {sausages: 0, color:"Blue"};
 var tableTwelve = {sausages: 0, color:"Blue"};
 var currentHand = {sausages: 0, color:"Black"} // This is the hand. It keeps track of how many sausages a player has when proceding with their turn.
 
-//these will hold the values of each table corresponding to the number of sausages in them
-function placeSausages(){
 
 
+// This is going to make a bunch of "table" objects
+var board = {},
+    arr = [];
+for (i=1; i<13; i++) {
+    arr.push("table" + i);
+}
+console.log(arr);
 
-
-
-
-    while(currentHand.sausages.length >= 0){
-            
-    }
+for(i of arr){
+    board[i] = {sausages: 0, color:"Black"}
 }
 
+console.log(board);
+//these will hold the values of each table corresponding to the number of sausages in them
 
-
-
-
-
-
-
-
-
-
-
-
+/*
+*   This is the "Lost in the Sauce" 
+*
+*
+*/
 
 
 </script>
-
+<button type="Purchase Mancala" onclick="alert('Are You sure You Want To Purchase Sausage Mancala for $15.99?')">Purchase Mancala</button>
 </body>
 </html>
