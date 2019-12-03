@@ -5,11 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Joseph and Brandon Game</title>
+
+    
 </head>
 <body>
     <div style= "background-color: gold"> 
         <h1>This page is experimental, Please calm your slightly large birds.</h1>
     </div>
+    <html>
+<head>
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: green;
+}
+</style>
+</head>
+<body>
+
+<html>
+<head>
+<style>
+.button {
+  background-color: rgb(96, 0, 206);
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.Purchase {
+  background-color: rgb(206, 151, 0);
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: orange;
+}
+.Purchase:hover {
+  background-color: rgb(0, 247, 255);
+}
+</style>
+</head>
+<body>
+
+<h2>Show me button work</h2>
+
+<button class="button">Table Six</button>
+<button class="Purchase" onclick="alert('Are You sure You Want To Purchase Sausage Mancala for $15.99?')">Purchase Mancala</button>
+
+</body>
+</html>
+
+</body>
+</html>
 <script>
     /*
     *   GAME RULES: 'https://www.lucidchart.com/invitations/accept/335c9134-4b18-43eb-b493-d16a87b0e722'
@@ -20,19 +84,7 @@
 
 var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
-var tableOne = {sausages: 0, color:"Green"};    //  Table's one through six for the Italians. 
-var tableTwo = {sausages: 0, color:"Green"};
-var tableThree = {sausages: 0, color:"Green"};
-var tableFour = {sausages: 0, color:"Green"};
-var tableFive = {sausages: 0, color:"Green"};
-var tableSix = {sausages: 0, color:"Green"};
-var tableSeven = {sausages: 0, color:"Blue"};   // Table's seven through twelve are on America side
-var tableEight = {sausages: 0, color:"Blue"};
-var tableNine = {sausages: 0, color:"Blue"};
-var tableTen = {sausages: 0, color:"Blue"};
-var tableEleven = {sausages: 0, color:"Blue"};
-var tableTwelve = {sausages: 0, color:"Blue"};
-var currentHand = {sausages: 0, color:"Black"} // This is the hand. It keeps track of how many sausages a player has when proceding with their turn.
+var currentHand = {sausages: 0, color:"Black"}  // This is either players current hand 
 
 
 
@@ -49,16 +101,49 @@ for(i of arr){
 }
 
 console.log(board);
-//these will hold the values of each table corresponding to the number of sausages in them
+
+
+// TO DOOO LIST: Make on click function that makes a "selectedTable"
+
+
 
 /*
-*   This is the "Lost in the Sauce" 
+*   This is the function to DROP sausages after selecting a table.
+*   Precondition: currentHand is has sausages and a table has been emptyied of sausages but stays selected. 
+*   Postcondition: currentHand is empty and tables (going counter clockwise) has had a sausage dropped in them however many times currentHand lands on it. 
+*/
+function sausageDropHand()    {
+    while (selectedTable.sausages.length != 0)  {
+        selectedTable.sausages.length = selectedTable.sausages.length - 1;
+        currentHand.sausages + 1;
+    }
+    return
+}
+
+
+
+/*
+*   This is the function to PICK UP sausages after selecting a table.
+*   Precondition: currentHand is empty and a table has been selected. 
+*   Postcondition: currentHand has sausages and the selected table is now empty. 
+*/
+function sausagePickUpHand()    {
+    while (currentHand.sausages.length != 0)    {
+        currentHand.sausages.length - 1;
+        selectedTable.sausages.length = selectedTable.sausages.length + 1;
+    }
+    return
+}
+
+
+/*
+*   This is the "Lost in the Sauce" wildcard  (later)
 *
 *
 */
 
 
 </script>
-<button type="Purchase Mancala" onclick="alert('Are You sure You Want To Purchase Sausage Mancala for $15.99?')">Purchase Mancala</button>
+
 </body>
 </html>
