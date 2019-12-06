@@ -291,6 +291,11 @@
     *   A object for each "home" and for each "table" will have a number of sausages assigned too it that will be displayed as number until we start prettying up the code. 
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
+function setButtonCount() {
+    let table = tableOne;
+    document.getElementById('$table').innerHTML = products.length();   
+    }
+
 var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
 var currentHand = {sausages: 0, color:"Black"}  // This is either players current hand 
