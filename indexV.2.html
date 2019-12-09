@@ -42,7 +42,7 @@
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  left: 40.7%;
+  left: 40%;
   top: 25%;
 }
 #tableFour {
@@ -54,7 +54,7 @@
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  left: 51.4%;
+  left: 53%;
   top: 25%;
 }
 #tableFive {
@@ -66,7 +66,7 @@
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  left: 61.9%;
+  left: 66%;
   top: 25%;
 }
 #tableSix {
@@ -78,7 +78,7 @@
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  left: 73.5%;
+  left: 79%;
   top: 25%;
 }
 #tableSeven {
@@ -157,12 +157,12 @@
   background-color: rgb(18, 189, 26);
   border: none;
   color: white;
-  padding: 200px 15px;
+  padding: 200px 75px;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   position: absolute;
-  left: 1%;
+  left: 5%;
   top: 32%;
 }
 #homeTwo {
@@ -244,7 +244,7 @@
 body {
   background-image: url('Le_board.jpg');
   background-repeat: no-repeat;
-  background-size: 2048px 1010px;
+  background-size: 2270px 1250px;
 }
 </style>
 <div style= "background-color: gold"> 
@@ -313,8 +313,6 @@ for (i=1; i<13; i++) {
     arr.push("table" + i);
 }
 console.log(arr);
-console.log(innerWidth)
-console.log(innerHeight)
 for(i of arr){
     board[i] = {sausages: 0, color:"Black"}
 }
@@ -378,11 +376,7 @@ function sausagePickUpHand(){
 *
 *
 */
-function screenSize()  {
-  console.log(Window.innerWidth)
-  console.log(Window.innerHeight)
-}
-screenSize();
+
 </script>
 
 </body>
