@@ -154,28 +154,30 @@
   top: 75%;
 }
 #homeOne {
-  background-color: rgb(18, 189, 26);
-  border: none;
-  color: white;
-  padding: 200px 15px;
+  background-color: Transparent;
+  color: rgb(255, 255, 255);
+  padding: 150px 48px;
+  border-radius: 50px;
   text-align: center;
   font-size: 16px;
+  color: black;
   cursor: pointer;
   position: absolute;
-  left: 1%;
-  top: 32%;
+  left: 7%;
+  top: 36%;
 }
 #homeTwo {
-  background-color: rgb(96, 0, 206);
-  border: none;
+  background-color: Transparent;
   color: white;
-  padding: 200px 15px;
+  padding: 150px 54px;
+  border-radius: 50px;
   text-align: center;
   font-size: 16px;
+  color: black;
   cursor: pointer;
   position: absolute;
-  left: 95%;
-  top: 32%;
+  left: 84%;
+  top: 36%;
 }
 #purchase {
   background-color: rgb(206, 151, 0);
@@ -186,6 +188,155 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+/*
+* Below is where the sausage count are going to be displayed
+*/
+#tableCountOne {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 73.5%;
+  top: 35%;
+}
+#tableCountTwo {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 62%;
+  top: 35%;
+}
+#tableCountThree {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 51.5%;
+  top: 35%;
+}
+#tableCountFour {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 40.5%;
+  top: 35%;
+}
+#tableCountFive {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 30.2%;
+  top: 35%;
+}
+#tableCountSix {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 19.5%;
+  top: 35%;
+}
+#tableCountSeven {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 19.5%;
+  top: 65%;
+}
+#tableCountEight {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 30.2%;
+  top: 65%;
+}
+#tableCountNine {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 41%;
+  top: 65%;
+}
+#tableCountTen {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 51.5%;
+  top: 65%;
+}
+#tableCountEleven {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 62%;
+  top: 65%;
+}
+#tableCountTwelve {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 73.5%;
+  top: 65%;
+}
+
 
 /*
 * Everything below this is for the hovor effect.
@@ -277,8 +428,11 @@ body {
 
 <button id="homeOne" onclick="alert('Yarr!')">Home One</button>
 <button id="homeTwo" onclick="alert('Yarr!')">Home Two</button>
-
-
+<!-- 
+<div id= tableCountOne class="sausageCount">
+    <img src="images/Sausage.png" alt="Sausage" width="60" height="40">
+</div>
+Everything above this is the image div-->
 
 </body>
 </html>
@@ -371,6 +525,8 @@ function sausagePickUpHand(){
     }
     // return
 }
+
+
 /*
 *   This is the "Lost in the Sauce" wildcard  (later)
 *
