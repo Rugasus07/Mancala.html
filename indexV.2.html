@@ -196,7 +196,7 @@
 /*
 * Below is where the sausage count are going to be displayed
 */
-#tableCountOne {
+#tableSausageOne {
   background-color: transparent;
   border: none;
   color: white;
@@ -208,7 +208,7 @@
   left: 71%;
   top: 37%;
 }
-#tableCountTwo {
+#tableSausageTwo {
   background-color: transparent;
   border: none;
   color: white;
@@ -220,7 +220,7 @@
   left: 59.25%;
   top: 37%;
 }
-#tableCountThree {
+#tableSausageThree {
   background-color: transparent;
   border: none;
   color: white;
@@ -232,7 +232,7 @@
   left: 48.5%;
   top: 37%;
 }
-#tableCountFour {
+#tableSausageFour {
   background-color: transparent;
   border: none;
   color: white;
@@ -244,7 +244,7 @@
   left: 38.5%;
   top: 37%;
 }
-#tableCountFive {
+#tableSausageFive {
   background-color: transparent;
   border: none;
   color: white;
@@ -256,7 +256,7 @@
   left: 28.2%;
   top: 37%;
 }
-#tableCountSix {
+#tableSausageSix {
   background-color: transparent;
   border: none;
   color: white;
@@ -268,7 +268,7 @@
   left: 17.5%;
   top: 37%;
 }
-#tableCountSeven {
+#tableSausageSeven {
   background-color: transparent;
   border: none;
   color: white;
@@ -280,7 +280,7 @@
   left: 17.5%;
   top: 59%;
 }
-#tableCountEight {
+#tableSausageEight {
   background-color: transparent;
   border: none;
   color: white;
@@ -292,7 +292,7 @@
   left: 28.2%;
   top: 59%;
 }
-#tableCountNine {
+#tableSausageNine {
   background-color: transparent;
   border: none;
   color: white;
@@ -304,7 +304,7 @@
   left: 39%;
   top: 59%;
 }
-#tableCountTen {
+#tableSausageTen {
   background-color: transparent;
   border: none;
   color: white;
@@ -316,7 +316,7 @@
   left: 49.5%;
   top: 59%;
 }
-#tableCountEleven {
+#tableSausageEleven {
   background-color: transparent;
   border: none;
   color: white;
@@ -328,7 +328,7 @@
   left: 60%;
   top: 59%;
 }
-#tableCountTwelve {
+#tableSausageTwelve {
   background-color: transparent;
   border: none;
   color: white;
@@ -436,64 +436,62 @@ body {
 <button id="homeOne" onclick="alert('Yarr!')">Home One</button>
 <button id="homeTwo" onclick="alert('Yarr!')">Home Two</button>
 
-<div id= tableCountOne class="sausageCount">
+<div id= tableSausageOne class="sausageImage">
     <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
-
-    
 </div>
 <!-- Table 1 -->
 
-<div id= tableCountTwo class="sausageCount">
+<div id= tableSausageTwo class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 2 -->
 
-<div id= tableCountThree class="sausageCount">
+<div id= tableSausageThree class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 3 -->
 
-<div id= tableCountFour class="sausageCount">
+<div id= tableSausageFour class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 4 -->
 
-<div id= tableCountFive class="sausageCount">
+<div id= tableSausageFive class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 5 -->
 
-<div id= tableCountSix class="sausageCount">
+<div id= tableSausageSix class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 6 -->
 
-<div id= tableCountSeven class="sausageCount">
+<div id= tableSausageSeven class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 7 -->
 
-<div id= tableCountEight class="sausageCount">
+<div id= tableSausageEight class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 8 -->
 
-<div id= tableCountNine class="sausageCount">
+<div id= tableSausageNine class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 9 -->
 
-<div id= tableCountTen class="sausageCount">
+<div id= tableSausageTen class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 10 -->
 
-<div id= tableCountEleven class="sausageCount">
+<div id= tableSausageEleven class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 11 -->
 
-<div id= tableCountTwelve class="sausageCount">
+<div id= tableSausageTwelve class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 </div>
 <!-- Table 12 -->
@@ -519,7 +517,7 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
-let currentHand = tableCount1;
+let selectedTable = tableCount1;
 sausagePickUpHand();
 console.log(tableCount1)
 
@@ -586,7 +584,7 @@ function sausagePickUpHand(){
         selectedTable.sausages.pop();
         currentHand.sausages.push("sausage");
     }
-    // return
+    return
 }
 /*
 *   This is the function to PICK UP sausages after selecting a table.
@@ -600,11 +598,8 @@ function sausageDropHand(){
     }
     // return
 }
-while()
+while() 
 
-let currentHand = tableCount1;
-sausagePickUpHand();
-console.log(tableCount1)
 
 
 /*
