@@ -518,6 +518,13 @@ body {
     *   A object for each "home" and for each "table" will have a number of sausages assigned too it that will be displayed as number until we start prettying up the code. 
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
+
+let currentHand = tableCount1;
+sausagePickUpHand();
+console.log(tableCount1)
+
+
+
 function setButtonCount() {
     let table = tableOne;
     document.getElementById('$table').innerHTML = products.length();   
@@ -525,7 +532,7 @@ function setButtonCount() {
 
 var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
-var currentHand = {sausages: 0, color:"Black"}  // This is either players current hand 
+var currentHand = []  // This is either players current hand 
 // This is going to make a bunch of "table" objects
 var board = {},
     arr = [];
@@ -574,10 +581,10 @@ var sausageArray = [
   {name: sausage, image: "url.imagetype"}
 ]
 
-function sausageDropHand(){
+function sausagePickUpHand(){
     while(selectedTable.sausages.length != 0){
-        selectedTable.sausages.length = selectedTable.sausages.length - 1;
-        currentHand.sausages + 1;
+        selectedTable.sausages.pop();
+        currentHand.sausages.push("sausage");
     }
     // return
 }
@@ -586,13 +593,18 @@ function sausageDropHand(){
 *   Precondition: currentHand is empty and a table has been selected. 
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
-function sausagePickUpHand(){
+function sausageDropHand(){
     while(currentHand.sausages.length != 0){
-        currentHand.sausages.length - 1;
+        currentHand.sausages.pop;
         selectedTable.sausages.length = selectedTable.sausages.length + 1;
     }
     // return
 }
+
+
+let currentHand = tableCount1;
+sausagePickUpHand();
+console.log(tableCount1)
 
 
 /*
