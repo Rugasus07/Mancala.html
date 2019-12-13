@@ -444,8 +444,7 @@ body {
 
 <div id= tableSausageOne class="sausageImage">
     <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
-    <p style="text-align:right;">Centered Heading</p>
-    
+    <p id = "countOne" style="text-align:right;">Centered Heading</p>   
 </div>
 <!-- Table 1 -->
 
@@ -589,6 +588,11 @@ var sausageArray = [
   {name: sausage, image: "url.imagetype"}
 ]
 
+function showCountOne(tableNum) {
+  document.getElementById("countOne").innerHTML = "4"
+}
+
+
 function sausagePickUpHand(){
     while(selectedTable.sausages.length != 0){
         selectedTable.sausages.pop();
@@ -604,7 +608,7 @@ function sausagePickUpHand(){
 function sausageDropHand(){
     while(currentHand.sausages.length != 0){
         currentHand.sausages.pop;
-        selectedTable.sausages.length = selectedTable.sausages.length + 1;
+        selectedTable.sausages.push("sausage")
     }
     // return
 }
