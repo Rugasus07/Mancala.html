@@ -6,19 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Joseph and Brandon Mancala Game</title>
     <body>
-    <div class= "american-tables"> 
-      <div class= "table" value-table= "0" ></div>
-      <p>4</p>
-      <div class= "table" value-table= "1" ></div>
-      <p>4</p>
-      <div class= "table" value-table= "2" ></div>
-      <p>4</p>
-      <div class= "table" value-table= "3" ></div>
-      <p>4</p>
-      <div class= "table" value-table= "4" ></div>
-      <p>4</p>
-      <div class= "table" value-table= "5" ></div>
-      <p>4</p>
+      
+    
       
 
 
@@ -30,7 +19,7 @@
     
     
     </script>
-  </body>
+
     <style>
 
 
@@ -470,8 +459,7 @@ body {
 
 <div id= tableSausageOne class="sausageImage">
     <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
-    <p>4</p>
-    <p id = "countOne" style="text-align:right;">Centered Heading</p>   
+    <p style="text-align:right;"></p>   
 </div>
 <!-- Table 1 -->
 
@@ -535,11 +523,6 @@ body {
 <!-- Everything above this is the image div for each table-->
 
 
-</body>
-</html>
-
-</body>
-</html>
 <script>
 
 
@@ -624,9 +607,9 @@ function showCountOne(tableNum) {
 
 
 function sausagePickUpHand(){
-    while(selectedTable.sausages.length != 0){
-        selectedTable.sausages.pop();
-        currentHand.sausages.push("sausage");
+    while(selectedTable.sausage.length != 0){
+        selectedTable.sausage.pop();
+        currentHand.sausage.push("sausage");
     }
     return
 }
@@ -642,7 +625,10 @@ function sausageDropHand(){
     }
     // return
 }
-
+console.log("tableTwo");
+let tableTwo = document.querySelector("#tableSausageTwo p");
+    console.log(tableTwo);
+    tableTwo[0].innerHTML = "100";
 
 
 /*
@@ -652,6 +638,8 @@ function sausageDropHand(){
 */
 
 </script>
+
+
 
 </body>
 </html>
