@@ -539,10 +539,12 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
-let selectedTable = tableCount1;
-sausagePickUpHand();
-console.log(tableCount1)
-
+let selectedTable = [];
+function pickUpSausage(tableCount1)  {
+  let selectedTable = tableCount1;
+  sausagePickUpHand();
+  console.log(tableCount1)
+}
 
 
 function setButtonCount() {
@@ -573,7 +575,9 @@ console.log(board);
 
 
 
-var tableCount1 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+var tableCount1 = [
+  sausage = ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+]
 
 var tableCount2 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
 
