@@ -539,12 +539,31 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
-let selectedTable = [];
+var tableCount1 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+}
+
+
+let selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
+
 function pickUpSausage(tableCount1)  {
-  let selectedTable = tableCount1;
   sausagePickUpHand();
   console.log(tableCount1)
 }
+
+function sausagePickUpHand(selectedTable){
+    while(selectedTable.sausage.length != 0){
+        selectedTable.sausage.pop();
+        currentHand.sausage.push("sausage");
+    }
+    return
+}
+/*
+*   This is the function to PICK UP sausages after selecting a table.
+*   Precondition: currentHand is empty and a table has been selected. 
+*   Postcondition: currentHand has sausages and the selected table is now empty. 
+*/
+
 
 
 function setButtonCount() {
@@ -609,8 +628,8 @@ function showCountOne(tableNum) {
   document.getElementById("countOne").innerHTML = "4"
 }
 
-
-function sausagePickUpHand(){
+/*
+function sausagePickUpHand(selectedTable){
     while(selectedTable.sausage.length != 0){
         selectedTable.sausage.pop();
         currentHand.sausage.push("sausage");
