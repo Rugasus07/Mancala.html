@@ -542,19 +542,23 @@ body {
 var tableCount1 = {
   sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
 }
+var currentHand = {
+  sausage: [],
+}  // This is either players current hand 
 
+var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
 
-let selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
-
-function pickUpSausage(tableCount1)  {
+function pickUpSausage()  {
   sausagePickUpHand();
-  console.log(tableCount1)
+  console.log(selectedTable)
+  console.log("current Hand  "+ currentHand.sausage.length)
 }
 
-function sausagePickUpHand(selectedTable){
+function sausagePickUpHand(){
     while(selectedTable.sausage.length != 0){
         selectedTable.sausage.pop();
         currentHand.sausage.push("sausage");
+        console.log(selectedTable.sausage.length)
     }
     return
 }
@@ -573,7 +577,9 @@ function setButtonCount() {
 
 var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
-var currentHand = []  // This is either players current hand 
+var currentHand = {
+  sausage: [],
+}  // This is either players current hand 
 // This is going to make a bunch of "table" objects
 var board = {},
     arr = [];
