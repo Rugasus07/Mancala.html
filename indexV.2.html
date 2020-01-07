@@ -425,35 +425,33 @@ body {
 
 
 </style>
-
+<div style= "background-color: gold"> 
+<h1>This page is experimental, Please calm your slightly large birds.</h1>
+<p>Stoulka</p>
+</div>
 
 <!-- Removed many uneeded HTML, head and style tags. The CSS formerly below should be above with the rest of the CSS, I moved it there. Only use one head, one style and one body -->
 </head>
 
-  
-<div style= "background-color: gold"> 
-<h1>This page is experimental, Please calm your slightly large birds.</h1>
-<p>Stouka</p>
-</div>
 
 
 <a id="purchase" title="Click to Buy Mancala"
  href="https://www.ebay.com/itm/African-Oware-mancala-Seed-Board-Game-Deluxe-circular-shape-with-handle-Ha/183982450224?hash=item2ad6356630:g:iEMAAOSw-RNdr7kG" onclick="URL();return false;">BUY HERE</a>
-<button id="tableSix" onclick="alert('Top of the morning to ya laddies!')">Table 6</button>
-<button id="tableFive" onclick="alert('Top of the morning to ya laddies!')">Table 5</button>
-<button id="tableFour" onclick="alert('Top of the morning to ya laddies!')">Table 4</button>
-<button id="tableThree" onclick="alert('Top of the morning to ya laddies!')">Table 3</button>
-<button id="tableTwo" onclick="alert('Top of the morning to ya laddies!')">Table 2</button>
-<button id="tableOne" onclick="alert('Top of the morning to ya laddies!')">Table 1</button>
+<button id="table6" onclick="tableLoopDrop(tableCount6)">Table 6</button>
+<button id="table5" onclick="alert('Top of the morning to ya laddies!')">Table 5</button>
+<button id="table4" onclick="alert('Top of the morning to ya laddies!')">Table 4</button>
+<button id="table3" onclick="alert('Top of the morning to ya laddies!')">Table 3</button>
+<button id="table2" onclick="alert('Top of the morning to ya laddies!')">Table 2</button>
+<button id="table1" onclick="alert('Top of the morning to ya laddies!')">Table 1</button>
 <!-- Everything above is for player 1-->
 
 
-<button id="tableSeven" onclick="alert('Top of the morning to ya laddies!')">Table 7</button>
-<button id="tableEight" onclick="alert('Top of the morning to ya laddies!')">Table 8</button>
-<button id="tableNine" onclick="alert('Top of the morning to ya laddies!')">Table 9</button>
-<button id="tableTen" onclick="alert('Top of the morning to ya laddies!')">Table 10</button>
-<button id="tableEleven" onclick="alert('Top of the morning to ya laddies!')">Table 11</button>
-<button id="tableTwelve" onclick="alert('Top of the morning to ya laddies!')">Table 12</button>
+<button id="table7" onclick="alert('Top of the morning to ya laddies!')">Table 7</button>
+<button id="table8" onclick="alert('Top of the morning to ya laddies!')">Table 8</button>
+<button id="table9" onclick="alert('Top of the morning to ya laddies!')">Table 9</button>
+<button id="table10" onclick="alert('Top of the morning to ya laddies!')">Table 10</button>
+<button id="table11" onclick="alert('Top of the morning to ya laddies!')">Table 11</button>
+<button id="table12" onclick="alert('Top of the morning to ya laddies!')">Table 12</button>
 <!-- Everything above is for player 2-->
 
 <button id="homeOne" onclick="alert('Yarr!')">Home One</button>
@@ -541,16 +539,35 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
+function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
+  //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
+  
+  while(currentHand.sausages.length != 0){
+        currentHand.sausages.pop;
+        tableCount6.sausages.push("sausage")
+        i++;
+        //selectedTable = tablecount[i]
+        console.log("table 2" + tablecount2.sausage.length)
+        console.log("table 3" + tablecount3.sausage.length)
+        console.log("table 4" + tablecount4.sausage.length)
+        console.log("table 5" + tablecount5.sausage.length)
+    if(i => 11)  {
+        i = 0;
+      return
+    }
+  }    
+}
+
 
 var currentHand = {
   sausage: [],
 }  // This is either players current hand 
 
-var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
 
-function pickUpSausage()  {
+
+function pickUp()  {
   sausagePickUpHand();
-  console.log(selectedTable)
+  console.log(tableCount[i])
   console.log("current Hand  "+ currentHand.sausage.length)
 }
 
@@ -606,58 +623,56 @@ var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Ki
 
 
 
-var tableCount1 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
-}
+var tableCount1 = [
+  sausage = ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+]
+
 var tableCount2 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount3 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount4 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount5 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount6 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount7 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount8 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
-var tableCount9= {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+var tableCount9 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount10 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount11 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var tableCount12 = {
-  sausage: ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
-// var sausageArray = [
-//   {name: sausage, image: "url.imagetype"}
-// ]
+var sausageArray = [
+  {name: sausage, image: "url.imagetype"}
+]
 
 function showCountOne(tableNum) {
   document.getElementById("countOne").innerHTML = "4"
 }
 
-/*
-function sausagePickUpHand(selectedTable){
-    while(selectedTable.sausage.length != 0){
-        selectedTable.sausage.pop();
-        currentHand.sausage.push("sausage");
+
+function sausagePickUpHand(){
+    console.log()
     }
-    return
-}
+
 /*
 *   This is the function to PICK UP sausages after selecting a table.
 *   Precondition: currentHand is empty and a table has been selected. 
@@ -678,7 +693,6 @@ function sausageDropHand(){
 */
 
 
-// I am adding this to test my commit from home part 2
 </script>
 
 
