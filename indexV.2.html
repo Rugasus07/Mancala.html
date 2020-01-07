@@ -539,8 +539,38 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
-let selectedTable = tableCount1;
-sausagePickUpHand();
+function tableLoopDrop(selectedTable)  {  // This is a loop to run through all the tables 1 to 12
+  //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
+  
+  while(currentHand.sausages.length != 0){
+        currentHand.sausages.pop;
+        selectedTable.sausages.push("sausage")
+        i++;
+        //selectedTable = tablecount[i]
+        console.log("table 2" + tablecount2.sausage.length)
+        console.log("table 3" + tablecount3.sausage.length)
+        console.log("table 4" + tablecount4.sausage.length)
+        console.log("table 5" + tablecount5.sausage.length)
+    if(i => 11)  {
+        i = 0;
+      return
+    }
+  }    
+}
+
+
+var currentHand = {
+  sausage: [],
+}  // This is either players current hand 
+
+var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons MUST be a on a table before "tableLoop() runs"
+
+function pickUp()  {
+  sausagePickUpHand();
+  console.log(selectedTable)
+  console.log("current Hand  "+ currentHand.sausage.length)
+}
+
 
 
 
@@ -552,7 +582,9 @@ function setButtonCount() {
 
 var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
-var currentHand = []  // This is either players current hand 
+var currentHand = {
+  sausage: [],
+}  // This is either players current hand 
 // This is going to make a bunch of "table" objects
 var board = {},
     arr = [];
@@ -573,31 +605,46 @@ for(i of arr){
 
 
 
-var tableCount1 = 4  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+var tableCount1 = [
+  sausage = ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+]
 
-var tableCount2 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
-
-var tableCount3 = ["sausage", "sausage", "sausage", "sausage"]; // This is the array to display the amount of sausages on a table.
-
-var tableCount4 = ["sausage", "sausage", "sausage", "sausage"]; // This is the array to display the amount of sausages on a table.
-
-var tableCount5 = ["sausage", "sausage", "sausage", "sausage"]; // This is the array to display the amount of sausages on a table.
-
-var tableCount6 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
-
-var tableCount7 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
-
-var tableCount8 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
-
-var tableCount9 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
-
-var tableCount10 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
-
-var tableCount11 = ["sausage", "sausage", "sausage", "sausage"]; // This is the array to display the amount of sausages on a table.
-
-var tableCount12 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
-
-
+var tableCount2 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount3 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount4 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount5 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount6 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount7 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount8 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount9 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount10 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount11 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var tableCount12 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+}
+var sausageArray = [
+  {name: sausage, image: "url.imagetype"}
+]
 
 function showCountOne(tableNum) {
   document.getElementById("countOne").innerHTML = "4"
@@ -627,6 +674,7 @@ function sausageDropHand(){
 *
 *
 */
+
 
 </script>
 
