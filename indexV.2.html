@@ -577,20 +577,25 @@ function setButtonCount() {
 
 var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
-var currentHand = {
-  sausage: [],
-}  // This is either players current hand 
-// This is going to make a bunch of "table" objects
-var board = {},
-    arr = [];
-for (i=1; i<13; i++) {
-    arr.push("table" + i);
-}
-console.log(arr);
-for(i of arr){
-    board[i] = {sausages: 0, color:"Black"}
-}
-console.log(board);
+
+
+
+// THIS IS CODE MR. FAST WROTE FOR US. NOT NEEDED BUT LEAVING IT (BELOW)
+
+// var currentHand = {
+//   sausage: [],
+// }  // This is either players current hand 
+// // This is going to make a bunch of "table" objects
+// var board = {},
+//     arr = [];
+// for (i=1; i<13; i++) {
+//     arr.push("table" + i);
+// }
+// console.log(arr);
+// for(i of arr){
+//     board[i] = {sausages: 0, color:"Black"}
+// }
+//console.log(board);
 // TO DOOO LIST: Make on click function that makes a "selectedTable"
 /*
 *   This is the function to DROP sausages after selecting a table.
