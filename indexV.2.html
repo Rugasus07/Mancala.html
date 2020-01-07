@@ -418,7 +418,7 @@
 * The "body" sets the background image for this page.
 */
 body {
-  background-image: url('Le_board.jpg');
+  background-image: url('images/Le_board.jpg');
   background-repeat: no-repeat;
   background-size: 2048px 1170px;
 }
@@ -571,7 +571,20 @@ function pickUp()  {
   console.log("current Hand  "+ currentHand.sausage.length)
 }
 
-
+function sausagePickUpHand(){
+  var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
+  console.log(selectedTable)
+    while(selectedTable.sausage.length != 0){
+        selectedTable.sausage.pop();
+        currentHand.sausage.push("sausage");
+        console.log(selectedTable.sausage.length)
+    }
+}
+/*
+*   This is the function to PICK UP sausages after selecting a table.
+*   Precondition: currentHand is empty and a table has been selected. 
+*   Postcondition: currentHand has sausages and the selected table is now empty. 
+*/
 
 
 
@@ -587,26 +600,26 @@ var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Ki
 
 // THIS IS CODE MR. FAST WROTE FOR US. NOT NEEDED BUT LEAVING IT (BELOW)
 
-// var currentHand = {
-//   sausage: [],
-// }  // This is either players current hand 
-// // This is going to make a bunch of "table" objects
-// var board = {},
-//     arr = [];
-// for (i=1; i<13; i++) {
-//     arr.push("table" + i);
-// }
-// console.log(arr);
-// for(i of arr){
-//     board[i] = {sausages: 0, color:"Black"}
-// }
-//console.log(board);
-// TO DOOO LIST: Make on click function that makes a "selectedTable"
-/*
-*   This is the function to DROP sausages after selecting a table.
-*   Precondition: currentHand is has sausages and a table has been emptyied of sausages but stays selected. 
-*   Postcondition: currentHand is empty and tables (going counter clockwise) has had a sausage dropped in them however many times currentHand lands on it. 
-*/
+// // var currentHand = {
+// //   sausage: [],
+// // }  // This is either players current hand 
+// // // This is going to make a bunch of "table" objects
+// // var board = {},
+// //     arr = [];
+// // for (i=1; i<13; i++) {
+// //     arr.push("table" + i);
+// // }
+// // console.log(arr);
+// // for(i of arr){
+// //     board[i] = {sausages: 0, color:"Black"}
+//}
+  //console.log(board);
+// // TO DOOO LIST: Make on click function that makes a "selectedTable"
+// /*
+// *   This is the function to DROP sausages after selecting a table.
+// *   Precondition: currentHand is has sausages and a table has been emptyied of sausages but stays selected. 
+// *   Postcondition: currentHand is empty and tables (going counter clockwise) has had a sausage dropped in them however many times currentHand lands on it. 
+// */
 
 
 
