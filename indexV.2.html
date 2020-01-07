@@ -427,7 +427,7 @@ body {
 </style>
 <div style= "background-color: gold"> 
 <h1>This page is experimental, Please calm your slightly large birds.</h1>
-<p>Stouka</p>
+<p>Stoulka</p>
 </div>
 
 <!-- Removed many uneeded HTML, head and style tags. The CSS formerly below should be above with the rest of the CSS, I moved it there. Only use one head, one style and one body -->
@@ -437,7 +437,7 @@ body {
 
 <a id="purchase" title="Click to Buy Mancala"
  href="https://www.ebay.com/itm/African-Oware-mancala-Seed-Board-Game-Deluxe-circular-shape-with-handle-Ha/183982450224?hash=item2ad6356630:g:iEMAAOSw-RNdr7kG" onclick="URL();return false;">BUY HERE</a>
-<button id="tableSix" onclick="alert('Top of the morning to ya laddies!')">Table 6</button>
+<button id="tableSix" onclick="tableLoopDrop(tableCount6)">Table 6</button>
 <button id="tableFive" onclick="alert('Top of the morning to ya laddies!')">Table 5</button>
 <button id="tableFour" onclick="alert('Top of the morning to ya laddies!')">Table 4</button>
 <button id="tableThree" onclick="alert('Top of the morning to ya laddies!')">Table 3</button>
@@ -539,12 +539,12 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
-function tableLoopDrop(selectedTable)  {  // This is a loop to run through all the tables 1 to 12
+function tableLoopDrop(tableCount6)  {  // This is a loop to run through all the tables 1 to 12
   //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
   
   while(currentHand.sausages.length != 0){
         currentHand.sausages.pop;
-        selectedTable.sausages.push("sausage")
+        tableCount6.sausages.push("sausage")
         i++;
         //selectedTable = tablecount[i]
         console.log("table 2" + tablecount2.sausage.length)
@@ -563,11 +563,11 @@ var currentHand = {
   sausage: [],
 }  // This is either players current hand 
 
-var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons MUST be a on a table before "tableLoop() runs"
+
 
 function pickUp()  {
   sausagePickUpHand();
-  console.log(selectedTable)
+  console.log(tableCount[i])
   console.log("current Hand  "+ currentHand.sausage.length)
 }
 
