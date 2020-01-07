@@ -541,7 +541,7 @@ body {
 
 let selectedTable = tableCount1;
 sausagePickUpHand();
-console.log(tableCount1)
+
 
 
 
@@ -563,7 +563,7 @@ console.log(arr);
 for(i of arr){
     board[i] = {sausages: 0, color:"Black"}
 }
-console.log(board);
+
 // TO DOOO LIST: Make on click function that makes a "selectedTable"
 /*
 *   This is the function to DROP sausages after selecting a table.
@@ -573,7 +573,7 @@ console.log(board);
 
 
 
-var tableCount1 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+var tableCount1 = 4  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
 
 var tableCount2 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
 
@@ -597,9 +597,7 @@ var tableCount11 = ["sausage", "sausage", "sausage", "sausage"]; // This is the 
 
 var tableCount12 = ["sausage", "sausage", "sausage", "sausage"];  // This is the array to display the amount of sausages on a table.
 
-var sausageArray = [
-  {name: sausage, image: "url.imagetype"}
-]
+
 
 function showCountOne(tableNum) {
   document.getElementById("countOne").innerHTML = "4"
@@ -607,12 +605,9 @@ function showCountOne(tableNum) {
 
 
 function sausagePickUpHand(){
-    while(selectedTable.sausage.length != 0){
-        selectedTable.sausage.pop();
-        currentHand.sausage.push("sausage");
+    console.log()
     }
-    return
-}
+
 /*
 *   This is the function to PICK UP sausages after selecting a table.
 *   Precondition: currentHand is empty and a table has been selected. 
@@ -625,10 +620,6 @@ function sausageDropHand(){
     }
     // return
 }
-console.log("tableTwo");
-let tableTwo = document.querySelector("#tableSausageTwo p");
-    console.log(tableTwo);
-    tableTwo[0].innerHTML = "100";
 
 
 /*
