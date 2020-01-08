@@ -358,6 +358,20 @@
   top: 59%;
 }
 
+#pit1 {
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 15px 35px;
+  text-align: center;
+  font-size: 64px;
+  cursor: pointer;
+  position: absolute;
+  left: 71%;
+  top: 35%;
+}
+
+
 
 /*
 * Everything below this is for the hover effect.
@@ -427,7 +441,6 @@ body {
 </style>
 <div style= "background-color: gold"> 
 <h1>This page is experimental, Please calm your slightly large birds.</h1>
-<p>Stoulka</p>
 </div>
 
 <!-- Removed many uneeded HTML, head and style tags. The CSS formerly below should be above with the rest of the CSS, I moved it there. Only use one head, one style and one body -->
@@ -454,8 +467,8 @@ body {
 <button id="table12" onclick="alert('Top of the morning to ya laddies!')">Table 12</button>
 <!-- Everything above is for player 2-->
 
-<button id="homeOne" onclick="alert('Yarr!')">Home One</button>
-<button id="homeTwo" onclick="alert('Yarr!')">Home Two</button>
+<div class="homeOne" onclick="alert('Yarr! You found a something we were to lazy to fix')">Home One</div>
+<div class="homeTwo" onclick="alert('Yarr! You found a something we were to lazy to fix')">Home Two</div>
 
 <div id= tableSausageOne class="sausageImage">
     <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
@@ -466,7 +479,7 @@ body {
 <div id= tableSausageTwo class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
 
-  <p style= "text-align: top right" >4</p>
+  <p style= "text-align: top right" ></p>
 </div>
 <!-- Table 2 -->
 
@@ -521,7 +534,22 @@ body {
 <!-- Table 12 -->
 
 <!-- Everything above this is the image div for each table-->
+<!-- <div class= "pitNum"></div>  -->
+  <div class="pit1"><p>4</p></div>
+  <div class="pit2"><p>4</p></div>
+  <div class="pit3"><p>4</p></div>
+  <div class="pit4"><p>4</p></div>
+  <div class="pit5"><p>4</p></div>
+  <div class="pit6"><p>4</p></div>
+  <div class="pit7"><p>4</p></div>
+  <div class="pit8"><p>4</p></div>
+  <div class="pit9"><p>4</p></div>
+  <div class="pit10"><p>4</p></div>
+  <div class="pit11"><p>4</p></div>
+  <div class="pit12"><p>4</p></div>
 
+<div class="homeOne" >Home One</div>
+<div class="homeTwo" >Home Two</div>
 
 <script>
 
@@ -539,6 +567,40 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
+
+
+
+function moveSausages()   {
+  let stones = currentHand.sausage.length;
+  while (stones > 0) {
+            ++pit;
+
+            // wrap around the board before reaching other player's store
+            if (pit > 12) {
+                pit = 0;
+            }
+
+            this.add_stones(pit, 1);
+            currentHand.sausage.pop;
+            this.game.draw_stones(pit);
+        }
+
+function dropSausage(pit, stones) {
+
+  if (pit === 6) {
+    this.current_store += stones;
+  } else if (pit === 13) {
+    this.other_store[pit] += stones;
+  } else if (pit < 6) {
+    this.current_pits[pit] += stones;
+  } else if (pit > 6) {
+    this.other_pits[pit - 7] += stones;
+  }
+};
+
+
+}
+
 function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
   //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
   
@@ -553,7 +615,6 @@ function tableLoopDrop(tableCount)  {  // This is a loop to run through all the 
         console.log("table 5" + tablecount5.sausage.length)
     if(i => 11)  {
         i = 0;
-      return
     }
   }    
 }
@@ -569,6 +630,7 @@ function pickUp()  {
   sausagePickUpHand();
   //console.log(tableCount[i])
   console.log("current Hand  "+ currentHand.sausage.length)
+  //console.log(selectedTable.sausage.length)
 }
 
 function sausagePickUpHand(){
@@ -623,9 +685,9 @@ var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Ki
 
 
 
-var tableCount1 = [
+var tableCount1 = {
   sausage = ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
-]
+}
 var tableCount2 = {
   sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
@@ -663,14 +725,10 @@ var sausageArray = [
   {name: sausage, image: "url.imagetype"}
 ]
 
-function showCountOne(tableNum) {
-  document.getElementById("countOne").innerHTML = "4"
-}
 
-
-function sausagePickUpHand(){
-    console.log()
-    }
+// function sausagePickUpHand(){  What does this do? i have no idea
+//     console.log()
+//     }
 
 /*
 *   This is the function to PICK UP sausages after selecting a table.
