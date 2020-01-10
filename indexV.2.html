@@ -450,7 +450,7 @@ body {
 <button id="table4" onclick="alert('Top of the morning to ya laddies!')">Table 4</button>
 <button id="table3" onclick="alert('Top of the morning to ya laddies!')">Table 3</button>
 <button id="table2" onclick="alert('Top of the morning to ya laddies!')">Table 2</button>
-<button id="table1" onclick="tableLoopDrop(), console.log()">Table 1</button>
+<button id="table1" onclick="pickUp(), console.log()">Table 1</button>
 <!-- Everything above is for player 1-->
 
 
@@ -639,19 +639,21 @@ var currentHand = {
 
 
 function pickUp()  {
+  while(tableCount1.sausage.length != 0){
+        tableCount1.sausage.pop();
+        currentHand.sausage.push("sausage");
+        console.log(currentHand.sausage.length)
+    }
   sausagePickUpHand();
-  //console.log(tableCount[i])
   console.log("current Hand  "+ currentHand.sausage.length)
-  //console.log(selectedTable.sausage.length)
+  console.log("table 1  "+ tableCount1.sausage.length)
 }
 
 function sausagePickUpHand(){
-  var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
-  console.log(selectedTable)
-    while(selectedTable.sausage.length != 0){
-        selectedTable.sausage.pop();
-        currentHand.sausage.push("sausage");
-        console.log(selectedTable.sausage.length)
+    while(currentHand.sausage.length != 0){
+        sausage.pop();
+        tableCount2.sausage.push("sausage");
+        console.log("Table 2  " + tableCount2.sausage.length)
     }
 }
 /*
