@@ -596,7 +596,7 @@ function moveSausages()   {
             currentHand.sausage.pop;
             this.game.draw_stones(pit); // draw_stones does not exist
         }
-
+}
 function dropSausage(pit, stones) {
 
   if (pit === 6) {
@@ -611,7 +611,6 @@ function dropSausage(pit, stones) {
 };
 
 
-}
 
 function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
   //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
@@ -630,6 +629,39 @@ function tableLoopDrop(tableCount)  {  // This is a loop to run through all the 
     }
   }    
 }
+
+
+
+
+
+
+var tableCount1 = {
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+}
+var currentHand = {
+  sausage: [],
+}  // This is either players current hand 
+
+var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
+
+function pickUpSausage()  {
+  sausagePickUpHand();
+  console.log(selectedTable)
+  console.log("current Hand  "+ currentHand.sausage.length)
+}
+
+function sausagePickUpHand(){
+    while(selectedTable.sausage.length != 0){
+        selectedTable.sausage.pop();
+        currentHand.sausage.push("sausage");
+        console.log(selectedTable.sausage.length)
+    }
+    return
+}
+
+
+
+
 
 
 var currentHand = {
@@ -735,9 +767,6 @@ var tableCount11 = {
 var tableCount12 = {
   sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
-var sausageArray = [
-  {image: "url.imagetype"}
-]
 
 
 // function sausagePickUpHand(){  What does this do? i have no idea
@@ -750,11 +779,13 @@ var sausageArray = [
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
 function sausageDropHand(){
-    while(currentHand.sausage.length != 0){
-        currentHand.sausage.pop;
-        selectedTable.sausage.push("sausage")
+    while(currentHand.sausages.length != 0){
+        currentHand.sausages.pop;
+        selectedTable.sausages.push("sausage")
+        n=0;
         n++;
         selectedTable = tableCount[n];
+
     }
     // return
 }
