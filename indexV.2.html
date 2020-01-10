@@ -464,7 +464,7 @@ body {
 
 <div id= tableSausageOne class="sausageImage">
     <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
-    <p style= "text-align: center" >4</p>
+    <p style= "text-align: center" >tableCount1</p>
   </div>
 <!-- Table 1 -->
 
@@ -580,51 +580,23 @@ body {
     *   Every three turns we need one of the cards from our deck (linked above), for each players THIRD turn.
     */
 
-
-
-
-function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
-  //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
-  
-  while(currentHand.sausage.length != 0){
-        currentHand.sausage.pop;
-        tableCount6.sausage.push("sausage")
-        i++;
-        //selectedTable = tablecount[i]
-        console.log("table 2" + tablecount2.sausage.length)
-        console.log("table 3" + tablecount3.sausage.length)
-        console.log("table 4" + tablecount4.sausage.length)
-        console.log("table 5" + tablecount5.sausage.length)
-    if(i => 11)  {
-        i = 0;
-    }
-  }    
-}
-
-
-
-
-
-
-var currentHand = {
-  sausage: [],
-}  // This is either players current hand 
-
 var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
 
 function pickUpSausage()  {
   sausagePickUpHand();
   console.log(selectedTable)
-  console.log("current Hand  "+ currentHand.sausage.length)
+  console.log("current Hand  "+ currentHand)
 }
 
-function sausagePickUpHand(){
-    while(selectedTable.sausage.length != 0){
-        selectedTable.sausage.pop();
-        currentHand.sausage.push("sausage");
-        console.log(selectedTable.sausage.length)
+function sausagePickUpHandV2(){
+    var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
+    console.log("selectedTable value: "+selectedTable)
+    while(selectedTable != 0){
+        selectedTable = selectedTable - 1;
+        console.log("selectedTable value:   "+selectedTable)
+        currentHand = currentHand + 1; 
+        console.log("currentHand value:   "+currentHand)
     }
-    return
 }
 
 
@@ -635,15 +607,14 @@ function sausageDropHand(selectedTable){
         n=1;
         n++;
         selectedTable = tableCount[n];
-
+    
     }
     // return  jk
 }
 
 
-var currentHand = {
-  sausage: [],
-}  // This is either players current hand 
+var currentHand = 0;
+// This is either players current hand 
 
 
 
@@ -678,6 +649,17 @@ function setButtonCount() {
 var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
 
+function sausageDropHand(selectedTable){
+    while(currentHand!= 0){
+        currentHand = currentHand--;
+        selectedTable = currentHand++;
+        n=1;
+        n++;
+        selectedTable = tableCount[n];
+
+    }
+    // return
+}
 
 
 // THIS IS CODE MR. FAST WROTE FOR US. NOT NEEDED BUT LEAVING IT (BELOW)
@@ -705,70 +687,18 @@ var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Ki
 
 
 
-var tableCount1 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
-}
-var tableCount2 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount3 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount4 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount5 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount6 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount7 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount8 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount9 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount10 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount11 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-var tableCount12 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
-}
-
-
-// function sausagePickUpHand(){  What does this do? i have no idea
-//     console.log()
-//     }
-
-/*
-*   This is the function to PICK UP sausages after selecting a table.
-*   Precondition: currentHand is empty and a table has been selected. 
-*   Postcondition: currentHand has sausages and the selected table is now empty. 
-*/
-function sausageDropHand(selectedTable){
-    while(currentHand.sausages.length != 0){
-        currentHand.sausages.pop;
-        selectedTable.sausages.push("sausage")
-        n=1;
-        n++;
-        selectedTable = tableCount[n];
-
-    }
-    // return
-}
-
-/*
-*   This is the "Lost in the Sauce" wildcard  (later)
-*
-*
-*/
+var tableCount1 = 4;
+var tableCount2 = 4;
+var tableCount3 = 4;
+var tableCount4 = 4;
+var tableCount5 = 4;
+var tableCount6 = 4;
+var tableCount7 = 4;
+var tableCount8 = 4;
+var tableCount9 = 4;
+var tableCount10 = 4;
+var tableCount11 = 4;
+var tableCount12 = 4;
 
 
 </script>
