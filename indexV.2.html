@@ -450,7 +450,7 @@ body {
 <button id="table4" onclick="alert('Top of the morning to ya laddies!')">Table 4</button>
 <button id="table3" onclick="alert('Top of the morning to ya laddies!')">Table 3</button>
 <button id="table2" onclick="alert('Top of the morning to ya laddies!')">Table 2</button>
-<button id="table1" onclick="tableLoopDrop()">Table 1</button>
+<button id="table1" onclick="tableLoopDrop(), console.log()">Table 1</button>
 <!-- Everything above is for player 1-->
 
 
@@ -582,7 +582,6 @@ body {
 
 
 
-
 function moveSausages()   {
   let stones = currentHand.sausage.length;
   while (stones > 0) {
@@ -616,9 +615,9 @@ function dropSausage(pit, stones) {
 function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
   //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
   
-  while(currentHand.sausages.length != 0){
-        currentHand.sausages.pop;
-        tableCount6.sausages.push("sausage")
+  while(currentHand.sausage.length != 0){
+        currentHand.sausage.pop;
+        tableCount6.sausage.push("sausage")
         i++;
         //selectedTable = tablecount[i]
         console.log("table 2" + tablecount2.sausage.length)
@@ -765,7 +764,6 @@ var tableCount11 = {
 var tableCount12 = {
   sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
-
 
 
 // function sausagePickUpHand(){  What does this do? i have no idea
