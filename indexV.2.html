@@ -450,7 +450,7 @@ body {
 <button id="table4" onclick="alert('Top of the morning to ya laddies!')">Table 4</button>
 <button id="table3" onclick="alert('Top of the morning to ya laddies!')">Table 3</button>
 <button id="table2" onclick="alert('Top of the morning to ya laddies!')">Table 2</button>
-<button id="table1" onclick="tableLoopDrop()">Table 1</button>
+<button id="table1" onclick="tableLoopDrop(), console.log()">Table 1</button>
 <!-- Everything above is for player 1-->
 
 
@@ -582,7 +582,6 @@ body {
 
 
 
-
 function moveSausages()   {
   let stones = currentHand.sausage.length;
   while (stones > 0) {
@@ -617,9 +616,9 @@ function dropSausage(pit, stones) {
 function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
   //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
   
-  while(currentHand.sausages.length != 0){
-        currentHand.sausages.pop;
-        tableCount6.sausages.push("sausage")
+  while(currentHand.sausage.length != 0){
+        currentHand.sausage.pop;
+        tableCount6.sausage.push("sausage")
         i++;
         //selectedTable = tablecount[i]
         console.log("table 2" + tablecount2.sausage.length)
@@ -699,7 +698,7 @@ var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Ki
 
 
 var tableCount1 = {
-  sausage = ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
 }
 var tableCount2 = {
   sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
@@ -735,7 +734,7 @@ var tableCount12 = {
   sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
 }
 var sausageArray = [
-  {name: sausage, image: "url.imagetype"}
+  {image: "url.imagetype"}
 ]
 
 
@@ -749,9 +748,9 @@ var sausageArray = [
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
 function sausageDropHand(){
-    while(currentHand.sausages.length != 0){
-        currentHand.sausages.pop;
-        selectedTable.sausages.push("sausage")
+    while(currentHand.sausage.length != 0){
+        currentHand.sausage.pop;
+        selectedTable.sausage.push("sausage")
         n++;
         selectedTable = tableCount[n];
     }
