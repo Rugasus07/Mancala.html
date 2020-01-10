@@ -629,8 +629,8 @@ function sausagePickUpHand(){
 
 
 function sausageDropHand(selectedTable){
-    while(currentHand.sausages.length != 0){
-        currentHand.sausages.pop;
+    while(currentHand.sausage != 0){
+        currentHand.sausage ;
         selectedTable.sausages.push("sausage")
         n=1;
         n++;
@@ -642,7 +642,7 @@ function sausageDropHand(selectedTable){
 
 
 var currentHand = {
-  sausage: [],
+  sausage: 0,
 }  // This is either players current hand 
 
 
@@ -706,40 +706,40 @@ var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Ki
 
 
 var tableCount1 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount2 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount3 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount4 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount5 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount6 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount7 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount8 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount9 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount10 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount11 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 var tableCount12 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table.
+  sausage : 4,  // This is the array to display the amount of sausages on a table.
 }
 
 
@@ -753,9 +753,9 @@ var tableCount12 = {
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
 function sausageDropHand(selectedTable){
-    while(currentHand.sausages.length != 0){
-        currentHand.sausages.pop;
-        selectedTable.sausages.push("sausage")
+    while(currentHand.sausages != 0){
+        currentHand.sausages -= 1;
+        selectedTable.sausages += 1;
         n=1;
         n++;
         selectedTable = tableCount[n];
