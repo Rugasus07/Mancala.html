@@ -382,40 +382,40 @@ div[class$="pit1"] {
 #button:hover {
   background-color: orange;
 }
-#tableOne:hover {
+#table1:hover {
   background-color: orange;
 }
-#tableTwo:hover {
+#table2:hover {
   background-color: orange;
 }
-#tableThree:hover {
+#table3:hover {
   background-color: orange;
 }
-#tableFour:hover {
+#table4:hover {
   background-color: orange;
 }
-#tableFive:hover {
+#table5:hover {
   background-color: orange;
 }
-#tableSix:hover {
+#table6:hover {
   background-color: orange;
 }
-#tableSeven:hover {
+#table7:hover {
   background-color: orange;
 }
-#tableEight:hover {
+#table8:hover {
   background-color: orange;
 }
-#tableTwelve:hover {
+#table9:hover {
   background-color: orange;
 }
-#tableNine:hover {
+#table10:hover {
   background-color: orange;
 }
-#tableTen:hover {
+#table11:hover {
   background-color: orange;
 }
-#tableEleven:hover {
+#table12:hover {
   background-color: orange;
 }
 #purchase:hover {
@@ -582,35 +582,6 @@ body {
 
 
 
-function moveSausages()   {
-  let stones = currentHand.sausage.length;
-  while (stones > 0) {
-            ++pit;
-
-            // wrap around the board before reaching other player's store
-            if (pit > 12) {
-                pit = 0;
-            }
-
-            this.add_stones(pit, 1); // add_stones does not exist
-            currentHand.sausage.pop;
-            this.game.draw_stones(pit); // draw_stones does not exist
-        }
-}
-function dropSausage(pit, stones) {
-
-  if (pit === 6) {
-    this.current_store += stones;
-  } else if (pit === 13) {
-    this.other_store[pit] += stones;
-  } else if (pit < 6) {
-    this.current_pits[pit] += stones;
-  } else if (pit > 6) {
-    this.other_pits[pit - 7] += stones;
-  }
-};
-
-
 
 function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
   //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
@@ -635,9 +606,6 @@ function tableLoopDrop(tableCount)  {  // This is a loop to run through all the 
 
 
 
-var tableCount1 = {
-  sausage : ["sausage", "sausage", "sausage", "sausage"],  // This is the array to display the amount of sausages on a table. CSS to make images might come later.
-}
 var currentHand = {
   sausage: [],
 }  // This is either players current hand 
@@ -660,8 +628,17 @@ function sausagePickUpHand(){
 }
 
 
+function sausageDropHand(selectedTable){
+    while(currentHand.sausages.length != 0){
+        currentHand.sausages.pop;
+        selectedTable.sausages.push("sausage")
+        n=1;
+        n++;
+        selectedTable = tableCount[n];
 
-
+    }
+    // return
+}
 
 
 var currentHand = {
@@ -775,11 +752,11 @@ var tableCount12 = {
 *   Precondition: currentHand is empty and a table has been selected. 
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
-function sausageDropHand(){
+function sausageDropHand(selectedTable){
     while(currentHand.sausages.length != 0){
         currentHand.sausages.pop;
         selectedTable.sausages.push("sausage")
-        n=0;
+        n=1;
         n++;
         selectedTable = tableCount[n];
 
