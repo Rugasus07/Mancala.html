@@ -591,7 +591,7 @@ function pickUpSausage()  {
 function sausagePickUpHandV2(){
     var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
     console.log("selectedTable value: "+selectedTable)
-    while(selectedTable != 0){
+    while(selectedTable > 0){
         selectedTable = selectedTable - 1;
         console.log("selectedTable value:   "+selectedTable)
         currentHand = currentHand + 1; 
@@ -601,7 +601,7 @@ function sausagePickUpHandV2(){
 
 
 function sausageDropHand(selectedTable){
-    while(currentHand.sausages.length != 0){
+    while(currentHand.sausages.length > 0){
         currentHand.sausages.pop;
         selectedTable.sausages.push("sausage")
         n=1;
@@ -687,7 +687,7 @@ function sausageDropHand(selectedTable){
 
 
 
-var tableCount1 = 4;
+var tableCount1 = 4;  // After you store value zero out the selected table. 
 var tableCount2 = 4;
 var tableCount3 = 4;
 var tableCount4 = 4;
@@ -699,7 +699,9 @@ var tableCount9 = 4;
 var tableCount10 = 4;
 var tableCount11 = 4;
 var tableCount12 = 4;
-
+// While the currentHand > 0 {
+// 
+//}
 
 </script>
 
