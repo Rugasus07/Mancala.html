@@ -606,9 +606,7 @@ function tableLoopDrop(tableCount)  {  // This is a loop to run through all the 
 
 
 
-var currentHand = {
-  sausage: [],
-}  // This is either players current hand 
+var currentHand = 0; // This is either players current hand 
 
 var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
 
@@ -619,12 +617,11 @@ function pickUpSausage()  {
 }
 
 function sausagePickUpHand(){
-    while(selectedTable.sausage.length != 0){
-        selectedTable.sausage.pop();
-        currentHand.sausage.push("sausage");
-        console.log(selectedTable.sausage.length)
+    while(selectedTable != 0){
+        selectedTable -= 1;
+        currentHand += 1;
+        console.log(selectedTable)
     }
-    return
 }
 
 
@@ -678,8 +675,8 @@ function setButtonCount() {
     document.getElementById('$table').innerHTML = products.length();   
     }
 
-var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
-var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
+var kitchenAmerican = 0;  // This is the object for Kitchen Amarican or Player 1's home
+var kitchenItalian = 0;  // This is the object for Kitchen Italian or Players 2's home
 
 
 
@@ -708,42 +705,18 @@ var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Ki
 
 
 
-var tableCount1 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount2 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount3 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount4 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount5 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount6 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount7 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount8 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount9 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount10 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount11 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
-var tableCount12 = {
-  sausage : 4,  // This is the array to display the amount of sausages on a table.
-}
+var tableCount1 = 4;
+var tableCount2 = 4;
+var tableCount3 = 4;
+var tableCount4 = 4;
+var tableCount5 = 4;
+var tableCount6 = 4;
+var tableCount7 = 4;
+var tableCount8 = 4;
+var tableCount9 = 4;
+var tableCount10 = 4;
+var tableCount11 = 4;
+var tableCount12 = 4;
 
 
 // function sausagePickUpHand(){  What does this do? i have no idea
@@ -756,9 +729,9 @@ var tableCount12 = {
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
 function sausageDropHand(selectedTable){
-    while(currentHand.sausages != 0){
-        currentHand.sausages -= 1;
-        selectedTable.sausages += 1;
+    while(currentHand != 0){
+        currentHand -= 1;
+        selectedTable += 1;
         n=1;
         n++;
         selectedTable = tableCount[n];
