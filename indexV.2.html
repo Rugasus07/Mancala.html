@@ -386,45 +386,16 @@ div[class$="pit1"] {
 /*
 * Everything below this is for the hover effect.
 */
-#button:hover {
-  background-color: orange;
+button[id^=table]:hover {
+  background-color: orange !important;
 }
-#table1:hover {
-  background-color: orange;
+
+button:disabled,
+button:disabled:hover {
+  background-color: gray !important;
+  cursor: default !important;
 }
-#table2:hover {
-  background-color: orange;
-}
-#table3:hover {
-  background-color: orange;
-}
-#table4:hover {
-  background-color: orange;
-}
-#table5:hover {
-  background-color: orange;
-}
-#table6:hover {
-  background-color: orange;
-}
-#table7:hover {
-  background-color: orange;
-}
-#table8:hover {
-  background-color: orange;
-}
-#table9:hover {
-  background-color: orange;
-}
-#table10:hover {
-  background-color: orange;
-}
-#table11:hover {
-  background-color: orange;
-}
-#table12:hover {
-  background-color: orange;
-}
+
 #purchase:hover {
   background-color: rgb(0, 247, 255);
 }
@@ -461,7 +432,7 @@ body {
 <!-- Everything above is for player 1-->
 
 
-<button id="table7" onclick="sausagePickUpHand(tableCount7)">Table 7</button>
+<button id="table7" onclick="sausagePickUpHand(tableCount7)" disabled>Table 7</button>
 <button id="table8" onclick="sausagePickUpHand(tableCount8)">Table 8</button>
 <button id="table9" onclick="sausagePickUpHand(tableCount9)">Table 9</button>
 <button id="table10" onclick="sausagePickUpHand(tableCount10)">Table 10</button>
@@ -654,13 +625,43 @@ function mainGameLoop(){
 
   // what players turn is it? Player 1 is odds, Player 2 is evens?
   function turnCheck(turn) {
-    if (turn % 2 === 1)  {
-      return(true); //is odd
+    if (turn % 2 === 1)  { // is odd
+      setPlayerOne();
     }
-    else if(turn % 2 === 0) {
-      return(false); // si even
+    else if(turn % 2 === 0) { // is even
+      setPlayerTwo();
     }
 
+  }
+  function setPlayerOne()  {
+    let theButton = document.getElementById("table7");
+    theButton.setAttribute('disabled',''),
+    theButton = document.getElementById("table8");
+    theButton.setAttribute('disabled',''),
+    theButton = document.getElementById("table9");
+    theButton.setAttribute('disabled',''),
+    theButton = document.getElementById("table10");
+    theButton.setAttribute('disabled',''),
+    theButton = document.getElementById("table11");
+    theButton.setAttribute('disabled',''),
+    theButton = document.getElementById("table12");
+    theButton.setAttribute('disabled',''),
+    // Above will disable players 2 buttons
+    theButton = document.getElementById("table1");
+    theButton.removeAttribute('disabled'),
+    theButton = document.getElementById("table2");
+    theButton.removeAttribute('disabled'),
+    theButton = document.getElementById("table3");
+    theButton.removeAttribute('disabled'),
+    theButton = document.getElementById("table4");
+    theButton.removeAttribute('disabled'),
+    theButton = document.getElementById("table5");
+    theButton.removeAttribute('disabled'),
+    theButton = document.getElementById("table6");
+    theButton.removeAttribute('disabled')
+  }  
+  function setPlayerTwo()  {
+    // code here restrict buttons 1-6
   }
   // choose a table to pickup
 
