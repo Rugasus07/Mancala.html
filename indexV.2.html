@@ -659,8 +659,12 @@ function mainGameLoop(){
   // distribute sausages
 
   // check for victory
-
-  // start over
+  if("winning condition?"){
+    return // needs a victory message
+  } else {
+    // start over
+    mainGameLoop();
+  }
 
 
 
