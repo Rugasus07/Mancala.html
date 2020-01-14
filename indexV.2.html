@@ -222,9 +222,9 @@ div[class$="pit1"] {
 
 }
 #distribute {
-  background-color: rgb(58, 43, 1);
+  background-color: rgb(226, 10, 10);
   border: none;
-  color: rgb(255, 187, 0);
+  color: rgb(255, 255, 255);
   padding: 15px 35px;
   text-align: center;
   font-size: 16px;
@@ -610,7 +610,10 @@ body {
 //   }    
 // }
 
-
+function onClickTable1()  {
+  let t = 1,
+  selectedTable = tableCount1; 
+}
 
 
 
@@ -621,9 +624,9 @@ var selectedTable = tableCount1; // Get rid of later. Set a variable to the On C
 
 
 function sausageDropHand(selectedTable){
-    while(currentHand.sausages.length > 0){
-        currentHand.sausages.pop;
-        selectedTable.sausages.push("sausage")
+    while(currentHand > 0){
+        currentHand -= 1;
+        selectedTable += 1;
         n=1;
         n++;
         selectedTable = tableCount[n];
@@ -654,6 +657,8 @@ function sausagePickUpHand(selectedTable){
     //   tableCount1 -= 1;
     //   currentHand += 1;
     console.log("current hand  ",currentHand) 
+    console.log("TableCountOne  ",tableCount1) 
+
     // }
     
 }
@@ -674,7 +679,7 @@ var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Ki
 var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
 
 function sausageDropHand(selectedTable){
-    while(currentHand!= 0){
+    while(currentHand > 0){
         currentHand = currentHand--;
         selectedTable = currentHand++;
         n=1;
