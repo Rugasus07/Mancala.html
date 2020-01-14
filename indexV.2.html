@@ -612,25 +612,62 @@ body {
 
 function onClickTable1()  {
   let t = 1,
-  selectedTable = tableCount1; 
+  selectedTable = tableCount1;
+  sausagePickUpHand();
+  console.log("After pickUp selectedTable count  "+selectedTable) 
+  console.log("After pickUp currentHand count  "+currentHand) 
+
 }
 
 var currentHand = 0;
 // This is either players current hand 
 
-function sausagePickUpHand(selectedTable){
-  currentHand = selectedTable;
-  selectedTable = 0;
-  console.log("selectedTable:",selectedTable)
-    // while(tableCount1 >= 0){
-    //   tableCount1 -= 1;
-    //   currentHand += 1;
-    console.log("current hand  ",currentHand) 
-    console.log("TableCountOne  ",tableCount1) 
-
-    // }
-    
+function sausagePickUpHand(table){    
+  console.log("current hand BEFORE:  " + currentHand) 
+  currentHand = table;
+  console.log("selectedTable: " + selectedTable)
+  console.log("current hand AFTER: " + currentHand) 
+  console.log("TableCountOne:  "+  tableCount1)   
 }
+
+
+function mainGameLoop(){
+
+  let turn = 0,
+      tables = [],
+      currentHand = 0;
+
+    console.log("It is turn: "+ turn);
+  // if 'first' turn setup table...
+
+  if(turn === 0){
+    for(let i = 0; i < 14; i++){
+      if(i === 0 || i === 7){
+        tables.push(0);
+      } else {
+        tables.push(4);
+      }
+    }
+    turn++
+    console.log("Built tables: " + tables);
+  }
+
+  // what players turn is it? Player 1 is odds, Player 2 is evens?
+
+  // choose a table to pickup
+
+  // distribute sausages
+
+  // check for victory
+
+  // start over
+
+
+
+
+
+}
+
 /*
 *   This is the function to PICK UP sausages after selecting a table.
 *   Precondition: currentHand is empty and a table has been selected. 
@@ -685,22 +722,23 @@ function sausageDropHand(selectedTable){
 
 
 
-var tableCount1 = 3;  // After you store value zero out the selected table. 
-var tableCount2 = 4;
-var tableCount3 = 4;
-var tableCount4 = 4;
-var tableCount5 = 4;
-var tableCount6 = 4;
-var tableCount7 = 4;
-var tableCount8 = 4;
-var tableCount9 = 4;
-var tableCount10 = 4;
-var tableCount11 = 4;
-var tableCount12 = 4;
-var tables = [4,4,4,4,4,4,4,4,4,4,4,4]
-// While the currentHand > 0 {
-// 
-//}
+// var tableCount1 = 3;  // After you store value zero out the selected table. 
+// var tableCount2 = 4;
+// var tableCount3 = 4;
+// var tableCount4 = 4;
+// var tableCount5 = 4;
+// var tableCount6 = 4;
+// var tableCount7 = 4;
+// var tableCount8 = 4;
+// var tableCount9 = 4;
+// var tableCount10 = 4;
+// var tableCount11 = 4;
+// var tableCount12 = 4;
+var tables = [0,4,4,4,4,4,4,0,4,4,4,4,4,4]
+
+//p1Home = tables[0];
+//p2Home = tables[7];
+
 </script>
 
 
