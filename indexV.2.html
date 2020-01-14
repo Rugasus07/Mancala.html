@@ -653,7 +653,15 @@ function mainGameLoop(){
   }
 
   // what players turn is it? Player 1 is odds, Player 2 is evens?
+  function turnCheck(turn) {
+    if (turn % 2 === 1)  {
+      return(true);
+    }
+    else if(turn % 2 === 0) {
+      return(false);
+    }
 
+  }
   // choose a table to pickup
 
   // distribute sausages
