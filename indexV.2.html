@@ -612,48 +612,15 @@ body {
 
 
 
-
-
-
-var selectedTable = tableCount1; // Get rid of later. Set a variable to the On Click for buttons
-
-
-
-
-function sausageDropHand(selectedTable){
-    while(currentHand.sausages.length > 0){
-        currentHand.sausages.pop;
-        selectedTable.sausages.push("sausage")
-        n=1;
-        n++;
-        selectedTable = tableCount[n];
-    
-    }
-    // return  jfk
-}
-
-
 var currentHand = 0;
 // This is either players current hand 
 
-
-
-// function pickUp()  {
-//   sausagePickUpHand();
-//   console.log(currentHand)
-//   console.log(selectedTable)
-// }
-
 function sausagePickUpHand(selectedTable){
-  console.log("selectedTable:",selectedTable)
-  console.log("current hand:",currentHand)
   currentHand = selectedTable;
   selectedTable = 0;
   console.log("selectedTable:",selectedTable)
-    // while(tableCount1 >= 0){
-    //   tableCount1 -= 1;
-    //   currentHand += 1;
-    console.log("current hand  ",currentHand) 
+  console.log("current hand  ",currentHand) 
+  
     // }
     
 }
@@ -711,7 +678,7 @@ function sausageDropHand(selectedTable){
 
 
 
-var tableCount1 = 4;  // After you store value zero out the selected table. 
+var tableCount1 = 3;  // After you store value zero out the selected table. 
 var tableCount2 = 4;
 var tableCount3 = 4;
 var tableCount4 = 4;
@@ -723,10 +690,10 @@ var tableCount9 = 4;
 var tableCount10 = 4;
 var tableCount11 = 4;
 var tableCount12 = 4;
+var tables = [4,4,4,4,4,4,4,4,4,4,4,4]
 // While the currentHand > 0 {
 // 
 //}
-
 </script>
 
 
