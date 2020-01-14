@@ -432,7 +432,7 @@ body {
 <!-- Everything above is for player 1-->
 
 
-<button id="table7" onclick="sausagePickUpHand(tableCount7)" disabled>Table 7</button>
+<button id="table7" onclick="sausagePickUpHand(tableCount7)">Table 7</button>
 <button id="table8" onclick="sausagePickUpHand(tableCount8)">Table 8</button>
 <button id="table9" onclick="sausagePickUpHand(tableCount9)">Table 9</button>
 <button id="table10" onclick="sausagePickUpHand(tableCount10)">Table 10</button>
@@ -583,7 +583,7 @@ body {
 
 function onClickTable1()  {
   let t = 1,
-  selectedTable = tableCount1;
+    selectedTable = tableCount1;
   sausagePickUpHand();
   console.log("After pickUp selectedTable count  "+selectedTable) 
   console.log("After pickUp currentHand count  "+currentHand) 
@@ -601,12 +601,13 @@ function sausagePickUpHand(table){
   console.log("TableCountOne:  "+  tableCount1)   
 }
 
-
+let turn = 0;
 function mainGameLoop(){
 
-  let turn = 0,
-      tables = [],
-      currentHand = 0;
+  let tables = [],
+      currentHand = 0,
+      p1 = [1,2,3,4,5,6],
+      p2 = [7,8,9,10,11,12];
 
     console.log("It is turn: "+ turn);
   // if 'first' turn setup table...
@@ -621,57 +622,57 @@ function mainGameLoop(){
     }
     turn++
     console.log("Built tables: " + tables);
+    console.log("Turn value UPDATED: "+ turn);
+
+    turnCheck();
+  
   }
 
   // what players turn is it? Player 1 is odds, Player 2 is evens?
-  function turnCheck(turn) {
+  function turnCheck() {
     if (turn % 2 === 1)  { // is odd
       setPlayerOne();
     }
     else if(turn % 2 === 0) { // is even
       setPlayerTwo();
     }
-
+    else {
+      console.log("Dis a failure")
+    }
   }
-  function setPlayerOne()  {
-    let theButton = document.getElementById("table7");
-    theButton.setAttribute('disabled',''),
-    theButton = document.getElementById("table8");
-    theButton.setAttribute('disabled',''),
-    theButton = document.getElementById("table9");
-    theButton.setAttribute('disabled',''),
-    theButton = document.getElementById("table10");
-    theButton.setAttribute('disabled',''),
-    theButton = document.getElementById("table11");
-    theButton.setAttribute('disabled',''),
-    theButton = document.getElementById("table12");
-    theButton.setAttribute('disabled',''),
-    // Above will disable players 2 buttons
-    theButton = document.getElementById("table1");
-    theButton.removeAttribute('disabled'),
-    theButton = document.getElementById("table2");
-    theButton.removeAttribute('disabled'),
-    theButton = document.getElementById("table3");
-    theButton.removeAttribute('disabled'),
-    theButton = document.getElementById("table4");
-    theButton.removeAttribute('disabled'),
-    theButton = document.getElementById("table5");
-    theButton.removeAttribute('disabled'),
-    theButton = document.getElementById("table6");
-    theButton.removeAttribute('disabled')
+
+  function setPlayerOne()  {  // Set game for Player 1
+    for(let i of p1){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.setAttribute('disabled','');
+    }
+    for(let i of p2){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.removeAttribute('disabled');
+    }
   }  
-  function setPlayerTwo()  {
-    // code here restrict buttons 1-6
+
+  function setPlayerTwo()  {  // Set game for Player 2
+    for(let i of p1){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.removeAttribute('disabled');
+    }
+    for(let i of p2){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.setAttribute('disabled','');
+    }
   }
-  // choose a table to pickup
 
-  // distribute sausages
+  // choose a table to pickup TO DO
 
-  // check for victory
+  // distribute sausages TO DO 
+
+  // check for victory TO DO
   if("winning condition?"){
     return // needs a victory message
   } else {
-    // start over
+    // start over turn++
+    turn++
     mainGameLoop();
   }
 
