@@ -655,10 +655,10 @@ function mainGameLoop(){
   // what players turn is it? Player 1 is odds, Player 2 is evens?
   function turnCheck(turn) {
     if (turn % 2 === 1)  {
-      return(true);
+      return(true); //is odd
     }
     else if(turn % 2 === 0) {
-      return(false);
+      return(false); // si even
     }
 
   }
@@ -679,7 +679,7 @@ function mainGameLoop(){
 
 
 }
-
+var tables = [0,4,4,4,4,4,4,0,4,4,4,4,4,4]
 /*
 *   This is the function to PICK UP sausages after selecting a table.
 *   Precondition: currentHand is empty and a table has been selected. 
@@ -746,7 +746,7 @@ function sausageDropHand(selectedTable){
 // var tableCount10 = 4;
 // var tableCount11 = 4;
 // var tableCount12 = 4;
-var tables = [0,4,4,4,4,4,4,0,4,4,4,4,4,4]
+
 
 //p1Home = tables[0];
 //p2Home = tables[7];
