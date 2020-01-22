@@ -597,13 +597,13 @@ function onClickTable1()  {
 var currentHand = 0;
 // This is either players current hand 
 
-function sausagePickUpHand(table){    
-  console.log("current hand BEFORE:  " + currentHand) 
-  currentHand = table;
-  console.log("selectedTable: " + selectedTable)
-  console.log("current hand AFTER: " + currentHand) 
-  console.log("TableCountOne:  "+  tableCount1)   
-}
+// function sausagePickUpHand(table){    
+//   console.log("current hand BEFORE:  " + currentHand) 
+//   currentHand = table;
+//   console.log("selectedTable: " + selectedTable)
+//   console.log("current hand AFTER: " + currentHand) 
+//   console.log("TableCountOne:  "+  tableCount1)   
+// }
 
 var tables = [];
 let turn = 0;
@@ -670,6 +670,16 @@ function mainGameLoop(){
   }
 
   // choose a table to pickup TO DO
+
+function moveSausage()  { // This function picks up all the values in a table and moves them to a temp "hand" then one at a time places them back counter clock wise. 
+  function pickUp() {
+    // code here
+  }
+
+
+}
+
+
 
   // distribute sausages TO DO counter clockwise
 
