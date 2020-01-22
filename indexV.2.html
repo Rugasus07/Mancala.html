@@ -423,7 +423,7 @@ body {
 
 <a id="purchase" title="Click to Buy Mancala"
  href="https://www.ebay.com/itm/African-Oware-mancala-Seed-Board-Game-Deluxe-circular-shape-with-handle-Ha/183982450224?hash=item2ad6356630:g:iEMAAOSw-RNdr7kG" onclick="URL();return false;">BUY HERE</a>
-<button id="table6" onclick="sausagePickUpHand(tableCount6)">Table 6</button>
+<button id="table6" value = "button Text" onclick="sausagePickUpHand(tableCount6)">Table 6</button>
 <button id="table5" onclick="sausagePickUpHand(tableCount5)">Table 5</button>
 <button id="table4" onclick="sausagePickUpHand(tableCount4)">Table 4</button>
 <button id="table3" onclick="sausagePickUpHand(tableCount3)">Table 3</button>
@@ -443,8 +443,8 @@ body {
 <!-- Everything above is for player 2-->
 
 <div id= tableSausageOne class="sausageImage">
-    <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
-    <p style= "text-align: center" >tableCount1</p>
+    <img src="images/Sausage_slanted.png" value="" alt="Sausage" width="40" height="50">
+    <p style= "text-align: center" ></p>
   </div>
 <!-- Table 1 -->
 
@@ -493,35 +493,35 @@ body {
 <div id= tableSausageEight class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 8 -->
 
 <div id= tableSausageNine class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 9 -->
 
 <div id= tableSausageTen class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 10 -->
 
 <div id= tableSausageEleven class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 11 -->
 
 <div id= tableSausageTwelve class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 12 -->
 
@@ -546,7 +546,11 @@ body {
 
 <script>
 
+function showValues() {
+  console.log(document.getElementById("tableSausgeOne").innnerHTML)
+  document.getElementById("table1").innnerHTML= '${tables[1]}';
 
+}
   
   /*
   Script can go down here. It's personal choice but traditionally it goes in the head section. Unless it messes with the page that is.
@@ -601,11 +605,11 @@ function sausagePickUpHand(table){
   console.log("TableCountOne:  "+  tableCount1)   
 }
 
+var tables = [];
 let turn = 0;
 function mainGameLoop(){
 
-  let tables = [],
-      currentHand = 0,
+  let currentHand = 0,
       p1 = [1,2,3,4,5,6],
       p2 = [7,8,9,10,11,12];
 
@@ -631,9 +635,11 @@ function mainGameLoop(){
   // what players turn is it? Player 1 is odds, Player 2 is evens?
   function turnCheck() {
     if (turn % 2 === 1)  { // is odd
+      console.log("Dis a failure 3")
       setPlayerOne();
     }
     else if(turn % 2 === 0) { // is even
+      console.log("Dis a failure 2")
       setPlayerTwo();
     }
     else {
@@ -641,7 +647,7 @@ function mainGameLoop(){
     }
   }
 
-  function setPlayerOne()  {  // Set game for Player 1
+  function setPlayerOne()  {  // Set game for Player 1 deactivating Player 2 buttons
     for(let i of p1){
       let theButton = document.getElementById(`table${i}`);
       theButton.setAttribute('disabled','');
@@ -652,7 +658,7 @@ function mainGameLoop(){
     }
   }  
 
-  function setPlayerTwo()  {  // Set game for Player 2
+  function setPlayerTwo()  {  // Set game for Player 2 deactivating Player 1 buttons
     for(let i of p1){
       let theButton = document.getElementById(`table${i}`);
       theButton.removeAttribute('disabled');
@@ -669,8 +675,8 @@ function mainGameLoop(){
 
   // check for victory TO DO
 
-  if("winning condition?"){
-    return // needs a victory message
+  if(false){
+    return "help";// needs a victory message
   } else {
     // start over turn++
     turn++
@@ -750,10 +756,15 @@ function sausageDropHand(selectedTable){
 // var tableCount11 = 4;
 // var tableCount12 = 4;
 
-var tables = [0,4,4,4,4,4,4,0,4,4,4,4,4,4]
 // wiKi how to index ----> tables[1]
 //p1Home = tables[0];
 //p2Home = tables[7];
+
+// function showValues() {
+//   console.log(document.getElementById("tableSausgeOne").innnerHTML)
+//   document.getElementById("table1").innnerHTML= '${tables[1]}';
+
+// }
 
 </script>
 
