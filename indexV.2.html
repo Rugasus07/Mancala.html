@@ -710,10 +710,11 @@ function moveSausage()  { // This function picks up all the values in a table an
     let currentHand = selectedTable,
         selectedTable = 0; 
         // This should take the whole value of selectedTable and move it to the players hand. Then resets the table to 0.
+        // The selectedTable should be defined with the onclick of each button
   }
   function dropHand() { // This should drop ONE value to the table and then move to the next table going in order of the array. 
     while(currentHand != 0) {
-      for(t < 12; t++;){
+      for(t < 12; t++;){  // t is table to move between the 12 tables also defined with the onClick from buttons
         if(t === 0 || t === 7){
           if (turn % 2 === 1)  { // is odd skip player [n]
             tables[t] += 1;
