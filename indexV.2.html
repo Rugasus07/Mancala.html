@@ -432,12 +432,12 @@ body {
 <!-- Everything above is for player 1-->
 
 
-<button id="table7" onclick="sausagePickUpHand(tableCount7)" disabled>Table 7</button>
-<button id="table8" onclick="sausagePickUpHand(tableCount8)">Table 8</button>
-<button id="table9" onclick="sausagePickUpHand(tableCount9)">Table 9</button>
-<button id="table10" onclick="sausagePickUpHand(tableCount10)">Table 10</button>
-<button id="table11" onclick="sausagePickUpHand(tableCount11)">Table 11</button>
-<button id="table12" onclick="sausagePickUpHand(tableCount12)">Table 12</button>
+<button id="table7" onclick="sausagePickUpHand(tableCount7)"disabled>Table 7</button>
+<button id="table8" onclick="sausagePickUpHand(tableCount8)"disabled>Table 8</button>
+<button id="table9" onclick="sausagePickUpHand(tableCount9)"disabled>Table 9</button>
+<button id="table10" onclick="sausagePickUpHand(tableCount10)"disabled>Table 10</button>
+<button id="table11" onclick="sausagePickUpHand(tableCount11)"disabled>Table 11</button>
+<button id="table12" onclick="sausagePickUpHand(tableCount12)"disabled>Table 12</button>
 
 <button id="distribute" onclick="alert('This button dont work yet Shtoulka!')">Distribute</button>
 <!-- Everything above is for player 2-->
@@ -607,7 +607,7 @@ function mainGameLoop(){
   let turn = 0,
       tables = [],
       currentHand = 0;
-
+      turnCheck()
     console.log("It is turn: "+ turn);
   // if 'first' turn setup table...
 
@@ -625,10 +625,10 @@ function mainGameLoop(){
 
   // what players turn is it? Player 1 is odds, Player 2 is evens?
   function turnCheck(turn) {
-    if (turn % 2 === 1)  { // is odd
+    if (turn % 2 === 0)  { // is odd
       setPlayerOne();
     }
-    else if(turn % 2 === 0) { // is even
+    else if(turn % 1 === 0) { // is even
       setPlayerTwo();
     }
 
@@ -636,27 +636,38 @@ function mainGameLoop(){
   function setPlayerOne()  {
     let theButton = document.getElementById("table7");
     theButton.setAttribute('disabled',''),
+
     theButton = document.getElementById("table8");
     theButton.setAttribute('disabled',''),
+
     theButton = document.getElementById("table9");
     theButton.setAttribute('disabled',''),
+
     theButton = document.getElementById("table10");
     theButton.setAttribute('disabled',''),
+
     theButton = document.getElementById("table11");
     theButton.setAttribute('disabled',''),
+
     theButton = document.getElementById("table12");
     theButton.setAttribute('disabled',''),
     // Above will disable players 2 buttons
+
     theButton = document.getElementById("table1");
     theButton.removeAttribute('disabled'),
+
     theButton = document.getElementById("table2");
     theButton.removeAttribute('disabled'),
+
     theButton = document.getElementById("table3");
     theButton.removeAttribute('disabled'),
+
     theButton = document.getElementById("table4");
     theButton.removeAttribute('disabled'),
+
     theButton = document.getElementById("table5");
     theButton.removeAttribute('disabled'),
+    
     theButton = document.getElementById("table6");
     theButton.removeAttribute('disabled')
   }  
@@ -687,8 +698,8 @@ var tables = [0,4,4,4,4,4,4,0,4,4,4,4,4,4]
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
 
-
-
+tables.innerHTML = `Table 1: ${tables[1]}, Table 2: ${tables[2]}, Table 3: ${tables[3]}`;
+console.log(`Table 1: ${tables[1]}, Table 2: ${tables[2]}, Table 3: ${tables[3]}, Table 5: ${tables[5]}, Table 6: ${tables[6]}, Table 8: ${tables[8]}, Table 9: ${tables[9]}, Table 10: ${tables[10]}, Table 10: ${tables[10]}, Table 11: ${tables[11]} `)
 function setButtonCount() {
     let table = tableOne;
     document.getElementById('$table').innerHTML = products.length();   
