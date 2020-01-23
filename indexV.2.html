@@ -423,7 +423,7 @@ body {
 
 <a id="purchase" title="Click to Buy Mancala"
  href="https://www.ebay.com/itm/African-Oware-mancala-Seed-Board-Game-Deluxe-circular-shape-with-handle-Ha/183982450224?hash=item2ad6356630:g:iEMAAOSw-RNdr7kG" onclick="URL();return false;">BUY HERE</a>
-<button id="table6" onclick="sausagePickUpHand(tableCount6)">Table 6</button>
+<button id="table6" value = "button Text" onclick="sausagePickUpHand(tableCount6)">Table 6</button>
 <button id="table5" onclick="sausagePickUpHand(tableCount5)">Table 5</button>
 <button id="table4" onclick="sausagePickUpHand(tableCount4)">Table 4</button>
 <button id="table3" onclick="sausagePickUpHand(tableCount3)">Table 3</button>
@@ -432,19 +432,19 @@ body {
 <!-- Everything above is for player 1-->
 
 
-<button id="table7" onclick="sausagePickUpHand(tableCount7)"disabled>Table 7</button>
-<button id="table8" onclick="sausagePickUpHand(tableCount8)"disabled>Table 8</button>
-<button id="table9" onclick="sausagePickUpHand(tableCount9)"disabled>Table 9</button>
-<button id="table10" onclick="sausagePickUpHand(tableCount10)"disabled>Table 10</button>
-<button id="table11" onclick="sausagePickUpHand(tableCount11)"disabled>Table 11</button>
-<button id="table12" onclick="sausagePickUpHand(tableCount12)"disabled>Table 12</button>
+<button id="table7" onclick="sausagePickUpHand(tableCount7)">Table 7</button>
+<button id="table8" onclick="sausagePickUpHand(tableCount8)">Table 8</button>
+<button id="table9" onclick="sausagePickUpHand(tableCount9)">Table 9</button>
+<button id="table10" onclick="sausagePickUpHand(tableCount10)">Table 10</button>
+<button id="table11" onclick="sausagePickUpHand(tableCount11)">Table 11</button>
+<button id="table12" onclick="sausagePickUpHand(tableCount12)">Table 12</button>
 
 <button id="distribute" onclick="alert('This button dont work yet Shtoulka!')">Distribute</button>
 <!-- Everything above is for player 2-->
 
 <div id= tableSausageOne class="sausageImage">
-    <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
-    <p style= "text-align: center" >tableCount1</p>
+    <img src="images/Sausage_slanted.png" value="" alt="Sausage" width="40" height="50">
+    <p style= "text-align: center" ></p>
   </div>
 <!-- Table 1 -->
 
@@ -493,35 +493,35 @@ body {
 <div id= tableSausageEight class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 8 -->
 
 <div id= tableSausageNine class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 9 -->
 
 <div id= tableSausageTen class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 10 -->
 
 <div id= tableSausageEleven class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 11 -->
 
 <div id= tableSausageTwelve class="sausageImage">
   <img src="images/Sausage_slanted.png" alt="Sausage" width="40" height="50">
   <p style= "text-align: center" >4</p>
-
+  
 </div>
 <!-- Table 12 -->
 
@@ -546,7 +546,11 @@ body {
 
 <script>
 
+function showValues() {
+  console.log(document.getElementById("tableSausgeOne").innnerHTML)
+  document.getElementById("table1").innnerHTML= '${tables[1]}';
 
+}
   
   /*
   Script can go down here. It's personal choice but traditionally it goes in the head section. Unless it messes with the page that is.
@@ -583,7 +587,7 @@ body {
 
 function onClickTable1()  {
   let t = 1,
-  selectedTable = tableCount1;
+    selectedTable = tableCount1;
   sausagePickUpHand();
   console.log("After pickUp selectedTable count  "+selectedTable) 
   console.log("After pickUp currentHand count  "+currentHand) 
@@ -593,21 +597,22 @@ function onClickTable1()  {
 var currentHand = 0;
 // This is either players current hand 
 
-function sausagePickUpHand(table){    
-  console.log("current hand BEFORE:  " + currentHand) 
-  currentHand = table;
-  console.log("selectedTable: " + selectedTable)
-  console.log("current hand AFTER: " + currentHand) 
-  console.log("TableCountOne:  "+  tableCount1)   
-}
+// function sausagePickUpHand(table){    
+//   console.log("current hand BEFORE:  " + currentHand) 
+//   currentHand = table;
+//   console.log("selectedTable: " + selectedTable)
+//   console.log("current hand AFTER: " + currentHand) 
+//   console.log("TableCountOne:  "+  tableCount1)   
+// }
 
-
+var tables = [];
+let turn = 0;
 function mainGameLoop(){
 
-  let turn = 0,
-      tables = [],
-      currentHand = 0;
-      turnCheck()
+  let currentHand = 0,
+      p1 = [1,2,3,4,5,6],
+      p2 = [7,8,9,10,11,12];
+
     console.log("It is turn: "+ turn);
   // if 'first' turn setup table...
 
@@ -621,68 +626,70 @@ function mainGameLoop(){
     }
     turn++
     console.log("Built tables: " + tables);
+    console.log("Turn value UPDATED: "+ turn);
+
+    turnCheck();
+  
   }
 
   // what players turn is it? Player 1 is odds, Player 2 is evens?
-  function turnCheck(turn) {
-    if (turn % 2 === 0)  { // is odd
+  function turnCheck() {
+    if (turn % 2 === 1)  { // is odd
+      console.log("Dis a failure 3")
       setPlayerOne();
     }
-    else if(turn % 1 === 0) { // is even
+    else if(turn % 2 === 0) { // is even
+      console.log("Dis a failure 2")
       setPlayerTwo();
     }
-
+    else {
+      console.log("Dis a failure")
+    }
   }
-  function setPlayerOne()  {
-    let theButton = document.getElementById("table7");
-    theButton.setAttribute('disabled',''),
 
-    theButton = document.getElementById("table8");
-    theButton.setAttribute('disabled',''),
-
-    theButton = document.getElementById("table9");
-    theButton.setAttribute('disabled',''),
-
-    theButton = document.getElementById("table10");
-    theButton.setAttribute('disabled',''),
-
-    theButton = document.getElementById("table11");
-    theButton.setAttribute('disabled',''),
-
-    theButton = document.getElementById("table12");
-    theButton.setAttribute('disabled',''),
-    // Above will disable players 2 buttons
-
-    theButton = document.getElementById("table1");
-    theButton.removeAttribute('disabled'),
-
-    theButton = document.getElementById("table2");
-    theButton.removeAttribute('disabled'),
-
-    theButton = document.getElementById("table3");
-    theButton.removeAttribute('disabled'),
-
-    theButton = document.getElementById("table4");
-    theButton.removeAttribute('disabled'),
-
-    theButton = document.getElementById("table5");
-    theButton.removeAttribute('disabled'),
-    
-    theButton = document.getElementById("table6");
-    theButton.removeAttribute('disabled')
+  function setPlayerOne()  {  // Set game for Player 1 deactivating Player 2 buttons
+    for(let i of p1){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.setAttribute('disabled','');
+    }
+    for(let i of p2){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.removeAttribute('disabled');
+    }
   }  
-  function setPlayerTwo()  {
-    // code here restrict buttons 1-6
+
+  function setPlayerTwo()  {  // Set game for Player 2 deactivating Player 1 buttons
+    for(let i of p1){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.removeAttribute('disabled');
+    }
+    for(let i of p2){
+      let theButton = document.getElementById(`table${i}`);
+      theButton.setAttribute('disabled','');
+    }
   }
-  // choose a table to pickup
 
-  // distribute sausages
+  // choose a table to pickup TO DO
 
-  // check for victory
-  if("winning condition?"){
-    return // needs a victory message
+function moveSausage()  { // This function picks up all the values in a table and moves them to a temp "hand" then one at a time places them back counter clock wise. 
+  function pickUp() {
+    // code here
+  }
+
+
+}
+
+
+
+  // distribute sausages TO DO counter clockwise
+
+  // check for victory TO DO
+
+  if(false){
+    return "help";// needs a victory message
   } else {
-    // start over
+    // start over turn++
+    turn++
     mainGameLoop();
   }
 
@@ -759,9 +766,15 @@ function sausageDropHand(selectedTable){
 // var tableCount11 = 4;
 // var tableCount12 = 4;
 
-
+// wiKi how to index ----> tables[1]
 //p1Home = tables[0];
 //p2Home = tables[7];
+
+// function showValues() {
+//   console.log(document.getElementById("tableSausgeOne").innnerHTML)
+//   document.getElementById("table1").innnerHTML= '${tables[1]}';
+
+// }
 
 </script>
 
