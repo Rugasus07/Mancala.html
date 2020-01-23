@@ -444,7 +444,7 @@ body {
 
 <div id= tableSausageOne class="sausageImage">
     <img src="images/Sausage_slanted.png" value="" alt="Sausage" width="40" height="50">
-    <p style= "text-align: center" ></p>
+    <p style= "text-align: center" >4</p>
   </div>
 <!-- Table 1 -->
 
@@ -728,15 +728,14 @@ var tables = [0,4,4,4,4,4,4,0,4,4,4,4,4,4]
 *   Postcondition: currentHand has sausages and the selected table is now empty. 
 */
 
-tables.innerHTML = `Table 1: ${tables[1]}, Table 2: ${tables[2]}, Table 3: ${tables[3]}`;
-console.log(`Table 1: ${tables[1]}, Table 2: ${tables[2]}, Table 3: ${tables[3]}, Table 4: ${tables[4]}, Table 5: ${tables[5]}, Table 6: ${tables[6]}, Table 8: ${tables[8]}, Table 9: ${tables[9]}, Table 10: ${tables[10]}, Table 11: ${tables[11]}, Table 12: ${tables[12]} `)
+tables.innerHTML = `Table 1: ${tables[1]}, Table 2: ${tables[2]}, Table 3: ${tables[3]}, Table 4: ${tables[4]}, Table 5: ${tables[5]}, Table 6: ${tables[6]}, Table 8: ${tables[8]}, Table 9: ${tables[9]}, Table 10: ${tables[10]}, Table 11: ${tables[11]}, Table 12: ${tables[12]} `;
+console.log(`Table 1: ${tables[1]}, Table 2: ${tables[2]}, Table 3: ${tables[3]}, Table 4: ${tables[4]}, Table 5: ${tables[5]}, Table 6: ${tables[6]}, Table 8: ${tables[8]}, Table 9: ${tables[9]}, Table 10: ${tables[10]}, Table 11: ${tables[11]}, Table 12: ${tables[12]}, American Kitchen: ${tables[0]}, Italian Kitchen: ${tables[7]} `)
 function setButtonCount() {
     let table = tableOne;
     document.getElementById('$table').innerHTML = products.length();   
     }
 
-var kitchenAmerican = {sausages: 0, color:"Blue"};  // This is the object for Kitchen Amarican or Player 1's home
-var kitchenItalian = {sausages: 0, color:"Green"};  // This is the object for Kitchen Italian or Players 2's home
+
 
 function sausageDropHand(selectedTable){
     while(currentHand > 0){
