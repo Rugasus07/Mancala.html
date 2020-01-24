@@ -565,26 +565,6 @@ function showValues() {
     */
 
 
-
-
-// function tableLoopDrop(tableCount)  {  // This is a loop to run through all the tables 1 to 12
-//   //selectedTable = tablecount[i+1] // sets the selectedTable too one past what Player selected.
-  
-//   while(currentHand.sausage.length != 0){
-//         currentHand.sausage.pop;
-//         tableCount6.sausage.push("sausage")
-//         i++;
-//         //selectedTable = tablecount[i]
-//         console.log("table 2" + tablecount2.sausage.length)
-//         console.log("table 3" + tablecount3.sausage.length)
-//         console.log("table 4" + tablecount4.sausage.length)
-//         console.log("table 5" + tablecount5.sausage.length)
-//     if(i => 11)  {
-//         i = 0;
-//     }
-//   }    
-// }
-
 function onClickTable1()  {
   let t = 1,
     selectedTable = tableCount1;
@@ -604,6 +584,7 @@ function sausagePickUpHand(tables){
   console.log("Table2:  "+  tables[2])   
 }
 
+// var tables = [0,4,4,4,4,4,4,0,4,4,4,4,4,4]
 var tables = [];
 let turn = 0;
 function mainGameLoop(){
@@ -628,6 +609,8 @@ function mainGameLoop(){
     console.log("Turn value UPDATED: "+ turn);
 
     turnCheck();
+    promptTurn();
+    moveSausage();
   
   }
 
@@ -670,9 +653,68 @@ function mainGameLoop(){
 
   // choose a table to pickup TO DO
 
+function moveSausage()  { // This function picks up all the values in a table and moves them to a temp "hand" then one at a time places them back counter clock wise. 
+    console.log("Current Hand v1:  ", currentHand)
+    let currentHand = selectedTable,
+        selectedTable = 0; 
+    console.log("Current Hand v2:  ", currentHand)
+        // This should take the whole value of selectedTable and move it to the players hand. Then resets the table to 0.
+  }
+  // function dropHand() { // This should drop ONE value to the table and then move to the next table going in order of the array. 
+  //   while(currentHand != 0) {
+  //     for(t < 12; t++;){
+  //       if(t === 0 || t === 7){
+  //         if (turn % 2 === 1)  { // is odd skip player [n]
+  //           tables[t] += 1;
+  //           currentHand -= 1;
+  //         }
+  //         else if(turn % 2 === 0) { // is even skip player [n]
+  //           tables[t] += 1;
+  //           currentHand -= 1;
+  //         }
+  //       } else {
+  //         tables[t] += 1; 
+  //         currentHand -= 1;
+  //       }
+  //       if(t=>12) {
+  //         t=0;
+  //       }
+  //     }
+  //   }
+  //   }
+
+
+
+  // distribute sausages TO DO counter clockwise
+
+  // check for victory TO DO
+
+  if(false){
+    return "help";// needs a victory message
+  } else {
+    // start over turn++
+    turn++
+    mainGameLoop();
+  }
+
+
+
+
+
+}
+
+
+
+function moveSausage()  { // This function picks up all the values in a table and moves them to a temp "hand" then one at a time places them back counter clock wise. 
+  function pickUp() {
+    let currentHand = selectedTable,
+        selectedTable = 0; 
+        // This should take the whole value of selectedTable and move it to the players hand. Then resets the table to 0.
+        // The selectedTable should be defined with the onclick of each button
+}
   function dropHand() { // This should drop ONE value to the table and then move to the next table going in order of the array. 
     while(currentHand != 0) {
-      for(t < 12; t++;){
+      for(t < 12; t++;){  // t is table to move between the 12 tables also defined with the onClick from buttons
         if(t === 0 || t === 7){
           if (turn % 2 === 1)  { // is odd skip player [n]
             tables[t] += 1;
@@ -718,19 +760,36 @@ function setButtonCount() {
     document.getElementById('$table').innerHTML = products.length();   
     }
 
+function moveSausage()  { // This function picks up all the values in a table and moves them to a temp "hand" then one at a time places them back counter clock wise. 
+  console.log("Current Hand v1:  ", currentHand)
+  let currentHand = selectedTable,
+      selectedTable = 0; 
+    console.log("Current Hand v2:  ", currentHand)
+        // This should take the whole value of selectedTable and move it to the players hand. Then resets the table to 0.
+  }
+  // function dropHand() { // This should drop ONE value to the table and then move to the next table going in order of the array. 
+  //   while(currentHand != 0) {
+  //     for(t < 12; t++;){
+  //       if(t === 0 || t === 7){
+  //         if (turn % 2 === 1)  { // is odd skip player [n]
+  //           tables[t] += 1;
+  //           currentHand -= 1;
+  //         }
+  //         else if(turn % 2 === 0) { // is even skip player [n]
+  //           tables[t] += 1;
+  //           currentHand -= 1;
+  //         }
+  //       } else {
+  //         tables[t] += 1; 
+  //         currentHand -= 1;
+  //       }
+  //       if(t=>12) {
+  //         t=0;
+  //       }
+  //     }
+  //   }
+  //   }
 
-
-function sausageDropHand(selectedTable){
-    while(currentHand > 0){
-        currentHand = currentHand--;
-        selectedTable = currentHand++;
-        n=1;
-        n++;
-        selectedTable = tableCount[n];
-
-    }
-    // return
-}
 
 
 // THIS IS CODE MR. FAST WROTE FOR US. NOT NEEDED BUT LEAVING IT (BELOW)
